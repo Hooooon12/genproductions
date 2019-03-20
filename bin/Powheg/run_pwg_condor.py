@@ -63,7 +63,7 @@ def prepareCondorScript( tag, i, folderName, queue, SCALE = '0' ):
  
    f.close()
 
-   template_dict["additional_config"] = ""
+#   template_dict["additional_config"] = "" # JH
    if os.path.exists('additional.condorConf') :
        input_file = open('additional.condorConf', 'r')
        template_dict["additional_config"] = "\n".join(extra_config.readlines())
