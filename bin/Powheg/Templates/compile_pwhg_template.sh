@@ -3,6 +3,10 @@ fail_exit() { echo "$$@" 1>&2; exit 1; }
 
 echo "Start of job on " `date`
 
+cd $currDir
+source /cvmfs/cms.cern.ch/cmsset_default.sh
+eval `scramv1 runtime -sh`
+
 export name=$folderName
 export cardInput=$powInputName
 export process=$process
