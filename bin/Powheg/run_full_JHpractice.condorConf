@@ -1,0 +1,9 @@
+executable              = ./run_full_JHpractice.sh 
+output                  = run_full_JHpractice_$(ProcId).out 
+error                   = run_full_JHpractice_$(ProcId).err 
+log                     = run_full_JHpractice.log 
+initialdir              = /afs/cern.ch/work/j/jihunk/CMSSW_10_1_6/src/genproductions/bin/Powheg/.
++JobFlavour             = "longlunch" 
+periodic_remove         = JobStatus == 5  
+WhenToTransferOutput    = ON_EXIT_OR_EVICT 
+
