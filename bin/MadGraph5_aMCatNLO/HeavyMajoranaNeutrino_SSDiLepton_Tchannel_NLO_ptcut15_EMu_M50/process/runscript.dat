@@ -1,0 +1,6 @@
+reweight=OFF
+done
+set nevents 1000
+set iseed 1
+set nevt_job 1000
+done

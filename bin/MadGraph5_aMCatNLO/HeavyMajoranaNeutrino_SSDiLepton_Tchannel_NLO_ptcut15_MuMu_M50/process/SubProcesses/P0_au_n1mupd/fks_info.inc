@@ -1,0 +1,53 @@
+      INTEGER IPOS, JPOS
+      INTEGER FKS_I_D(3), FKS_J_D(3)
+      INTEGER FKS_J_FROM_I_D(3, NEXTERNAL, 0:NEXTERNAL)
+      INTEGER PARTICLE_TYPE_D(3, NEXTERNAL), PDG_TYPE_D(3, NEXTERNAL)
+      REAL*8 PARTICLE_CHARGE_D(3, NEXTERNAL)
+
+      DATA FKS_I_D / 6, 6, 6 /
+      DATA FKS_J_D / 2, 5, 2 /
+
+      DATA (FKS_J_FROM_I_D(1, 6, JPOS), JPOS = 0, 2)  / 2, 2, 5 /
+
+      DATA (FKS_J_FROM_I_D(2, 6, JPOS), JPOS = 0, 2)  / 2, 2, 5 /
+
+      DATA (FKS_J_FROM_I_D(3, 5, JPOS), JPOS = 0, 1)  / 1, 2 /
+      DATA (FKS_J_FROM_I_D(3, 6, JPOS), JPOS = 0, 1)  / 1, 2 /
+
+
+C     
+C     Particle type:
+C     octet = 8, triplet = 3, singlet = 1
+      DATA (PARTICLE_TYPE_D(1, IPOS), IPOS=1, NEXTERNAL) / 1, 3, 1, 1,
+     $  3, 8 /
+      DATA (PARTICLE_TYPE_D(2, IPOS), IPOS=1, NEXTERNAL) / 1, 3, 1, 1,
+     $  3, 8 /
+      DATA (PARTICLE_TYPE_D(3, IPOS), IPOS=1, NEXTERNAL) / 1, 8, 1, 1,
+     $  3, -3 /
+
+C     
+C     Particle type according to PDG:
+C     
+      DATA (PDG_TYPE_D(1, IPOS), IPOS=1, NEXTERNAL) / 22, 2, 9900012, 
+     $ -13, 1, 21 /
+      DATA (PDG_TYPE_D(2, IPOS), IPOS=1, NEXTERNAL) / 22, 2, 9900012, 
+     $ -13, 1, 21 /
+      DATA (PDG_TYPE_D(3, IPOS), IPOS=1, NEXTERNAL) / 22, 21, 9900012,
+     $  -13, 1, -2 /
+
+C     
+C     Particle charge:
+C     charge is set 0. with QCD corrections, which is irrelevant
+      DATA (PARTICLE_CHARGE_D(1, IPOS), IPOS=1, NEXTERNAL) /  
+     $  0.000000000000000D0,   0.000000000000000D0,  
+     $  0.000000000000000D0,   0.000000000000000D0,  
+     $  0.000000000000000D0,   0.000000000000000D0 /
+      DATA (PARTICLE_CHARGE_D(2, IPOS), IPOS=1, NEXTERNAL) /  
+     $  0.000000000000000D0,   0.000000000000000D0,  
+     $  0.000000000000000D0,   0.000000000000000D0,  
+     $  0.000000000000000D0,   0.000000000000000D0 /
+      DATA (PARTICLE_CHARGE_D(3, IPOS), IPOS=1, NEXTERNAL) /  
+     $  0.000000000000000D0,   0.000000000000000D0,  
+     $  0.000000000000000D0,   0.000000000000000D0,  
+     $  0.000000000000000D0,   0.000000000000000D0 /
+

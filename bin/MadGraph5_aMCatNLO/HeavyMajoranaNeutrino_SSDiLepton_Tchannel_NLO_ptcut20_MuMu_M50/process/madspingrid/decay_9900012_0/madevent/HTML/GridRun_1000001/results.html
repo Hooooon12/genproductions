@@ -1,0 +1,122 @@
+
+<head>
+    <title>Process results</title>
+    <script type="text/javascript" src="../sortable.js"></script>
+    <link rel=stylesheet href="../mgstyle.css" type="text/css">
+</head>
+<body>
+<script type="text/javascript">
+function UrlExists(url) {
+  var http = new XMLHttpRequest();
+  http.open('HEAD', url, false);
+  try{
+     http.send()
+     }
+  catch(err){
+   return 1==2;
+  }
+  return http.status!=404;
+}
+function check_link(url,alt, id){
+    var obj = document.getElementById(id);
+    if ( ! UrlExists(url)){
+        if ( ! UrlExists(alt)){
+         obj.href = alt;
+         return true;
+        }
+       obj.href = alt;
+       return false;
+    }
+    obj.href = url;
+    return 1==1;
+}
+</script>
+  
+
+ <BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>s= 1.1472e-08 &#177 4.31e-11 (pb)</b><br><br>
+<table class="sortable" id='tablesort'>
+<tr><th>Graph</th>
+    <th> Cross-Section</th>
+    <th>Error</th>
+    <th>Events (K)</th>
+    <th>Unwgt</th>
+    <th>Luminosity</th>
+</tr>
+
+<tr><td align=right><a href=../../SubProcesses/P0_n1_mumudx/diagrams.html>P0_n1_mumudx</a></td>
+    <td align=right><a id="#P0_n1_mumudx" href=#P0_n1_mumudx onClick="check_link('#P0_n1_mumudx','#P0_n1_mumudx','#P0_n1_mumudx')"> 5.737e-09 </a> </td>
+    <td align=right>  3.36e-11</td>
+    <td align=right>  15.001</td>
+    <td align=right>  800.0</td>
+    <td align=right>  0</td>
+</tr>
+
+<tr><td align=right><a href=../../SubProcesses/P0_n1_mupdux/diagrams.html>P0_n1_mupdux</a></td>
+    <td align=right><a id="#P0_n1_mupdux" href=#P0_n1_mupdux onClick="check_link('#P0_n1_mupdux','#P0_n1_mupdux','#P0_n1_mupdux')"> 5.734e-09 </a> </td>
+    <td align=right>  2.7e-11</td>
+    <td align=right>  15.001</td>
+    <td align=right>  787.0</td>
+    <td align=right>  0</td>
+</tr>
+
+<tr><td align=right>P0 sum</td>
+    <td align=right><a id="./results.html" href=./results.html onClick="check_link('./results.html','','./results.html')"> 1.14717e-08 </a> </td>
+    <td align=right>  </td>
+    <td align=right>  </td>
+    <td align=right>  </td>
+    <td align=right>  </td>
+</tr>
+
+</table>
+</center>
+<br><br><br>
+ <dl>  
+<dt><a  name=P0_n1_mumudx href=../../SubProcesses/P0_n1_mumudx/diagrams.html>P0_n1_mumudx</a></dt><dd>
+ <BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>s= 5.7374e-09 &#177 3.36e-11 (pb)</b><br><br>
+<table class="sortable" id='tablesort'>
+<tr><th>Graph</th>
+    <th> Cross-Section</th>
+    <th>Error</th>
+    <th>Events (K)</th>
+    <th>Unwgt</th>
+    <th>Luminosity</th>
+</tr>
+
+<tr><td align=right>G1.2</td>
+    <td align=right><a id="../../SubProcesses/P0_n1_mumudx/G1.2/GridRun_1000001_log.txt" href=../../SubProcesses/P0_n1_mumudx/G1.2/GridRun_1000001_log.txt onClick="check_link('../../SubProcesses/P0_n1_mumudx/G1.2/GridRun_1000001_log.txt','../../SubProcesses/P0_n1_mumudx/G1.2/log.txt','../../SubProcesses/P0_n1_mumudx/G1.2/GridRun_1000001_log.txt')"> 5.737e-09 </a> </td>
+    <td align=right>  3.36e-11</td>
+    <td align=right>  15.001</td>
+    <td align=right>  800.0</td>
+    <td align=right>  1.39e+11</td>
+</tr>
+
+</table>
+</center>
+<br><br><br>
+  
+<dt><a  name=P0_n1_mupdux href=../../SubProcesses/P0_n1_mupdux/diagrams.html>P0_n1_mupdux</a></dt><dd>
+ <BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>s= 5.7343e-09 &#177 2.7e-11 (pb)</b><br><br>
+<table class="sortable" id='tablesort'>
+<tr><th>Graph</th>
+    <th> Cross-Section</th>
+    <th>Error</th>
+    <th>Events (K)</th>
+    <th>Unwgt</th>
+    <th>Luminosity</th>
+</tr>
+
+<tr><td align=right>G1.2</td>
+    <td align=right><a id="../../SubProcesses/P0_n1_mupdux/G1.2/GridRun_1000001_log.txt" href=../../SubProcesses/P0_n1_mupdux/G1.2/GridRun_1000001_log.txt onClick="check_link('../../SubProcesses/P0_n1_mupdux/G1.2/GridRun_1000001_log.txt','../../SubProcesses/P0_n1_mupdux/G1.2/log.txt','../../SubProcesses/P0_n1_mupdux/G1.2/GridRun_1000001_log.txt')"> 5.734e-09 </a> </td>
+    <td align=right>  2.7e-11</td>
+    <td align=right>  15.001</td>
+    <td align=right>  787.0</td>
+    <td align=right>  1.37e+11</td>
+</tr>
+
+</table>
+</center>
+<br><br><br>
+ </dl></body>

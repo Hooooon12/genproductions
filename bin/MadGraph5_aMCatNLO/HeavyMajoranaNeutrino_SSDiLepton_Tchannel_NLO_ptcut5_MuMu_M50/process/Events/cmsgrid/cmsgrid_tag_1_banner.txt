@@ -1,0 +1,424 @@
+<LesHouchesEvents version="3.0">
+<header>
+<!--
+#*********************************************************************
+#                                                                    *
+#                         MadGraph5_aMC@NLO                          *
+#                                                                    *
+#                   http://madgraph.hep.uiuc.edu                     *
+#                   http://madgraph.phys.ucl.ac.be                   *
+#                   http://amcatnlo.cern.ch                          *
+#                                                                    *
+#                     The MadGraph5_aMC@NLO team                     *
+#                                                                    *
+#....................................................................*
+#                                                                    *
+# This file contains all the information necessary to reproduce      *
+# the events generated                                               *
+#                                                                    *
+# 1. software version                                                *
+# 2. proc_card.dat      : code generation info including model       *
+# 3. param_card.dat     : model primary parameters in the LH format  *
+# 4. run_card.dat       : running parameters (collider and cuts)     *
+#                                                                    *
+#                                                                    *
+#*********************************************************************
+-->
+<MGVersion>
+#5.2.6.0
+</MGVersion>
+<MGRunCard>
+<![CDATA[
+#***********************************************************************
+#                        MadGraph5_aMC@NLO                             *
+#                                                                      *
+#                      run_card.dat aMC@NLO                            *
+#                                                                      *
+#  This file is used to set the parameters of the run.                 *
+#                                                                      *
+#  Some notation/conventions:                                          *
+#                                                                      *
+#   Lines starting with a hash (#) are info or comments                *
+#                                                                      *
+#   mind the format:   value    = variable     ! comment               *
+#                                                                      *
+#   Some of the values of variables can be list. These can either be   *
+#   comma or space separated.                                          *
+#***********************************************************************
+#
+#*******************                                                 
+# Running parameters
+#*******************                                                 
+#
+#***********************************************************************
+# Tag name for the run (one word)                                      *
+#***********************************************************************
+  tag_1	= run_tag ! name of the run 
+#***********************************************************************
+# Number of LHE events (and their normalization) and the required      *
+# (relative) accuracy on the Xsec.                                     *
+# These values are ignored for fixed order runs                        *
+#***********************************************************************
+  1000	= nevents ! Number of unweighted events requested 
+  0.001	= req_acc ! Required accuracy (-1=auto determined from nevents)
+  1000	= nevt_job ! Max number of events per job in event generation. 
+                 !  (-1= no split).
+#***********************************************************************
+# Normalize the weights of LHE events such that they sum or average to *
+# the total cross section                                              *
+#***********************************************************************
+  average	= event_norm ! valid settings: average, sum, bias
+#***********************************************************************
+# Number of points per itegration channel (ignored for aMC@NLO runs)   *
+#***********************************************************************
+  0.01	= req_acc_fo ! Required accuracy (-1=ignored, and use the 
+ 	                   ! number of points and iter. below)
+# These numbers are ignored except if req_acc_FO is equal to -1
+  5000	= npoints_fo_grid ! number of points to setup grids
+  4	= niters_fo_grid ! number of iter. to setup grids
+  10000	= npoints_fo ! number of points to compute Xsec
+  6	= niters_fo ! number of iter. to compute Xsec
+#***********************************************************************
+# Random number seed                                                   *
+#***********************************************************************
+  1	= iseed ! rnd seed (0=assigned automatically=default))
+#***********************************************************************
+# Collider type and energy                                             *
+#***********************************************************************
+  1	= lpp1 ! beam 1 type (0 = no PDF)
+  1	= lpp2 ! beam 2 type (0 = no PDF)
+  6500.0	= ebeam1 ! beam 1 energy in GeV
+  6500.0	= ebeam2 ! beam 2 energy in GeV
+#***********************************************************************
+# PDF choice: this automatically fixes also alpha_s(MZ) and its evol.  *
+#***********************************************************************
+  lhapdf	= pdlabel ! PDF set
+  82200	= lhaid ! If pdlabel=lhapdf, this is the lhapdf number. Only 
+              ! numbers for central PDF sets are allowed. Can be a list; 
+              ! PDF sets beyond the first are included via reweighting.
+#***********************************************************************
+# Include the NLO Monte Carlo subtr. terms for the following parton    *
+# shower (HERWIG6 | HERWIGPP | PYTHIA6Q | PYTHIA6PT | PYTHIA8)         *
+# WARNING: PYTHIA6PT works only for processes without FSR!!!!          *
+#***********************************************************************
+  PYTHIA8	= parton_shower 
+  1.0	= shower_scale_factor ! multiply default shower starting
+                                  ! scale by this factor
+#***********************************************************************
+# Renormalization and factorization scales                             *
+# (Default functional form for the non-fixed scales is the sum of      *
+# the transverse masses divided by two of all final state particles    * 
+# and partons. This can be changed in SubProcesses/set_scales.f or via *
+# dynamical_scale_choice option)                                       *
+#***********************************************************************
+  False	= fixed_ren_scale ! if .true. use fixed ren scale
+  False	= fixed_fac_scale ! if .true. use fixed fac scale
+  91.118	= mur_ref_fixed ! fixed ren reference scale 
+  91.118	= muf_ref_fixed ! fixed fact reference scale
+  -1	= dynamical_scale_choice ! Choose one (or more) of the predefined
+           ! dynamical choices. Can be a list; scale choices beyond the
+           ! first are included via reweighting
+  1.0	= mur_over_ref ! ratio of current muR over reference muR
+  1.0	= muf_over_ref ! ratio of current muF over reference muF
+#*********************************************************************** 
+# Reweight variables for scale dependence and PDF uncertainty          *
+#***********************************************************************
+  1.0, 2.0, 0.5	= rw_rscale ! muR factors to be included by reweighting
+  1.0, 2.0, 0.5	= rw_fscale ! muF factors to be included by reweighting
+  True	= reweight_scale ! Reweight to get scale variation using the 
+            ! rw_rscale and rw_fscale factors. Should be a list of 
+            ! booleans of equal length to dynamical_scale_choice to
+            ! specify for which choice to include scale dependence.
+  True	= reweight_pdf ! Reweight to get PDF uncertainty. Should be a
+            ! list booleans of equal length to lhaid to specify for
+            !  which PDF set to include the uncertainties.
+#***********************************************************************
+# Store reweight information in the LHE file for off-line model-       *
+# parameter reweighting at NLO+PS accuracy                             *
+#***********************************************************************
+  True	= store_rwgt_info ! Store info for reweighting in LHE file
+#***********************************************************************
+# ickkw parameter:                                                     *
+#   0: No merging                                                      *
+#   3: FxFx Merging - WARNING! Applies merging only at the hard-event  *
+#      level. After showering an MLM-type merging should be applied as *
+#      well. See http://amcatnlo.cern.ch/FxFx_merging.htm for details. *
+#   4: UNLOPS merging (with pythia8 only). No interface from within    *
+#      MG5_aMC available, but available in Pythia8.                    *
+#  -1: NNLL+NLO jet-veto computation. See arxiv:1412.8408 [hep-ph].    *
+#***********************************************************************
+  0	= ickkw 
+#***********************************************************************
+#
+#***********************************************************************
+# BW cutoff (M+/-bwcutoff*Gamma). Determines which resonances are      *
+# written in the LHE event file                                        *
+#***********************************************************************
+  15.0	= bwcutoff 
+#***********************************************************************
+# Cuts on the jets. Jet clustering is performed by FastJet.            *
+#  - When matching to a parton shower, these generation cuts should be *
+#    considerably softer than the analysis cuts.                       *
+#  - More specific cuts can be specified in SubProcesses/cuts.f        *
+#***********************************************************************
+  1.0	= jetalgo ! FastJet jet algorithm (1=kT, 0=C/A, -1=anti-kT)
+  0.7	= jetradius ! The radius parameter for the jet algorithm
+  5.0	= ptj ! Min jet transverse momentum
+  -1.0	= etaj ! Max jet abs(pseudo-rap) (a value .lt.0 means no cut)
+#***********************************************************************
+# Cuts on the charged leptons (e+, e-, mu+, mu-, tau+ and tau-)        *
+# More specific cuts can be specified in SubProcesses/cuts.f           *
+#***********************************************************************
+  5.0	= ptl ! Min lepton transverse momentum
+  -1.0	= etal ! Max lepton abs(pseudo-rap) (a value .lt.0 means no cut)
+  0.0	= drll ! Min distance between opposite sign lepton pairs
+  0.0	= drll_sf ! Min distance between opp. sign same-flavor lepton pairs
+  0.0	= mll ! Min inv. mass of all opposite sign lepton pairs
+  4.0	= mll_sf ! Min inv. mass of all opp. sign same-flavor lepton pairs
+#***********************************************************************
+# Photon-isolation cuts, according to hep-ph/9801442. When ptgmin=0,   *
+# all the other parameters are ignored.                                *
+# More specific cuts can be specified in SubProcesses/cuts.f           *
+#***********************************************************************
+  0.0	= ptgmin ! Min photon transverse momentum
+  -1.0	= etagamma ! Max photon abs(pseudo-rap)
+  0.4	= r0gamma ! Radius of isolation code
+  1.0	= xn ! n parameter of eq.(3.4) in hep-ph/9801442
+  1.0	= epsgamma ! epsilon_gamma parameter of eq.(3.4) in hep-ph/9801442
+  True	= isoem ! isolate photons from EM energy (photons and leptons)
+#***********************************************************************
+# For aMCfast+APPLGRID use in PDF fitting (http://amcfast.hepforge.org)*
+#***********************************************************************
+  0	= iappl ! aMCfast switch (0=OFF, 1=prepare grids, 2=fill grids)
+#***********************************************************************
+#********************************************************************* 
+#  Additional parameter
+#*********************************************************************
+  1.0	= muf1_over_ref # hidden parameter
+  1.0	= muf2_over_ref # hidden parameter
+  False	= fixed_qes_scale # hidden parameter
+  0.5	= rw_rscale_down # hidden parameter
+  91.118	= muf1_ref_fixed # hidden parameter
+  1.0	= qes_over_ref # hidden parameter
+  5	= maxjetflavor # hidden parameter
+  2.0	= rw_fscale_up # hidden parameter
+  0.5	= rw_fscale_down # hidden parameter
+  2.0	= rw_rscale_up # hidden parameter
+  91.118	= qes_ref_fixed # hidden parameter
+  91.118	= muf2_ref_fixed # hidden parameter
+]]>
+</MGRunCard>
+<slha>
+######################################################################
+## PARAM_CARD AUTOMATICALY GENERATED BY MG5                       ####
+######################################################################
+###################################
+## INFORMATION FOR LOOP
+###################################
+BLOCK LOOP # 
+      1 9.118800e+01 # mu_r
+###################################
+## INFORMATION FOR MASS
+###################################
+BLOCK MASS # 
+      6 1.733000e+02 # mt
+      23 9.118760e+01 # mz
+      25 1.257000e+02 # mh
+      9900012 5.000000e+01 # mn1
+      9900014 5.000000e+02 # mn2
+      9900016 1.000000e+03 # mn3
+      1 0.000000e+00 # d : 0.0
+      2 0.000000e+00 # u : 0.0
+      3 0.000000e+00 # s : 0.0
+      4 0.000000e+00 # c : 0.0
+      5 0.000000e+00 # b : 0.0
+      11 0.000000e+00 # e- : 0.0
+      12 0.000000e+00 # ve : 0.0
+      13 0.000000e+00 # mu- : 0.0
+      14 0.000000e+00 # vm : 0.0
+      15 0.000000e+00 # ta- : 0.0
+      16 0.000000e+00 # vt : 0.0
+      21 0.000000e+00 # g : 0.0
+      22 0.000000e+00 # a : 0.0
+      24 7.995123e+01 # w+ : cmath.sqrt(mz__exp__2/2. + cmath.sqrt(mz__exp__4/4. - (aew*cmath.pi*mz__exp__2)/(gf*sqrt__2)))
+      9000002 9.118760e+01 # ghz : mz
+      9000003 7.995123e+01 # ghwp : mw
+      9000004 7.995123e+01 # ghwm : mw
+###################################
+## INFORMATION FOR NUMIXING
+###################################
+BLOCK NUMIXING # 
+      1 0.000000e+00 # ven1
+      2 0.000000e+00 # ven2
+      3 0.000000e+00 # ven3
+      4 1.000000e-02 # vmun1
+      5 0.000000e+00 # vmun2
+      6 0.000000e+00 # vmun3
+      7 0.000000e+00 # vtan1
+      8 0.000000e+00 # vtan2
+      9 0.000000e+00 # vtan3
+###################################
+## INFORMATION FOR SMINPUTS
+###################################
+BLOCK SMINPUTS # 
+      1 1.279400e+02 # aewm1
+      2 1.174560e-05 # gf
+      3 1.184000e-01 # as
+###################################
+## INFORMATION FOR YUKAWA
+###################################
+BLOCK YUKAWA # 
+      6 1.733000e+02 # ymt
+###################################
+## INFORMATION FOR DECAY
+###################################
+BLOCK QNUMBERS 9900012 #  n1
+      1 0 # 3 times electric charge
+      2 2 # number of spin states (2s+1)
+      3 1 # colour rep (1: singlet, 3: triplet, 8: octet)
+      4 0 # particle/antiparticle distinction (0=own anti)
+###################################
+## INFORMATION FOR QNUMBERS 9900014
+###################################
+BLOCK QNUMBERS 9900014 #  n2
+      1 0 # 3 times electric charge
+      2 2 # number of spin states (2s+1)
+      3 1 # colour rep (1: singlet, 3: triplet, 8: octet)
+      4 0 # particle/antiparticle distinction (0=own anti)
+###################################
+## INFORMATION FOR QNUMBERS 9900016
+###################################
+BLOCK QNUMBERS 9900016 #  n3
+      1 0 # 3 times electric charge
+      2 2 # number of spin states (2s+1)
+      3 1 # colour rep (1: singlet, 3: triplet, 8: octet)
+      4 0 # particle/antiparticle distinction (0=own anti)
+#
+#*************************
+#      Decay widths      *
+#*************************
+#
+#      PDG        Width
+DECAY  1   0.000000e+00
+#
+#      PDG        Width
+DECAY  2   0.000000e+00
+#
+#      PDG        Width
+DECAY  3   0.000000e+00
+#
+#      PDG        Width
+DECAY  4   0.000000e+00
+#
+#      PDG        Width
+DECAY  5   0.000000e+00
+#
+#      PDG        Width
+DECAY  6   1.350000e+00
+#
+#      PDG        Width
+DECAY  11   0.000000e+00
+#
+#      PDG        Width
+DECAY  12   0.000000e+00
+#
+#      PDG        Width
+DECAY  13   0.000000e+00
+#
+#      PDG        Width
+DECAY  14   0.000000e+00
+#
+#      PDG        Width
+DECAY  15   0.000000e+00
+#
+#      PDG        Width
+DECAY  16   0.000000e+00
+#
+#      PDG        Width
+DECAY  21   0.000000e+00
+#
+#      PDG        Width
+DECAY  22   0.000000e+00
+#
+#      PDG        Width
+DECAY  23   2.495200e+00
+#
+#      PDG        Width
+DECAY  24   2.085000e+00
+#
+#      PDG        Width
+DECAY  25   4.170000e-03
+#
+#      PDG        Width
+DECAY  9000002   2.495200e+00
+#
+#      PDG        Width
+DECAY  9000003   2.085000e+00
+#
+#      PDG        Width
+DECAY  9000004   2.085000e+00
+#
+#      PDG        Width
+DECAY  9900012   2.237257e-08
+#  BR             NDA  ID1    ID2   ...
+   1.276474e-01   3    -13  -2  1 # 2.85580039182e-09
+   1.276474e-01   3    -13  -4  3 # 2.85580039182e-09
+   1.262349e-01   3    -1  2  13 # 2.82419913669e-09
+   1.262349e-01   3    -3  4  13 # 2.82419913669e-09
+   4.308848e-02   3    -11  12  13 # 9.64000034994e-10
+   4.308848e-02   3    -15  13  16 # 9.64000034994e-10
+   4.271078e-02   3    -13  -12  11 # 9.55549915305e-10
+   4.271078e-02   3    -16  -13  15 # 9.55549915305e-10
+   2.566178e-02   3    -13  13  14 # 5.74119969375e-10
+   2.565821e-02   3    -14  -13  13 # 5.740400993e-10
+   2.199271e-02   3    -1  1  14 # 4.92033443965e-10
+   2.199271e-02   3    -3  3  14 # 4.92033443965e-10
+   2.199271e-02   3    -5  5  14 # 4.92033443965e-10
+   2.197632e-02   3    -14  -1  1 # 4.91666757542e-10
+   2.197632e-02   3    -14  -3  3 # 4.91666757542e-10
+   2.197632e-02   3    -14  -5  5 # 4.91666757542e-10
+   1.698687e-02   3    -2  2  14 # 3.80039938156e-10
+   1.698687e-02   3    -4  4  14 # 3.80039938156e-10
+   1.695156e-02   3    -14  -2  2 # 3.79249962709e-10
+   1.695156e-02   3    -14  -4  4 # 3.79249962709e-10
+   1.002612e-02   3    -14  -12  12 # 2.24310071528e-10
+   1.002612e-02   3    -16  -14  16 # 2.24310071528e-10
+   9.841292e-03   3    -12  12  14 # 2.2017499416e-10
+   9.841292e-03   3    -16  14  16 # 2.2017499416e-10
+   5.001661e-03   3    -14  14  14 # 1.11900010839e-10
+   4.988028e-03   3    -11  11  14 # 1.11595005592e-10
+   4.988028e-03   3    -15  14  15 # 1.11595005592e-10
+   4.969702e-03   3    -14  -11  11 # 1.11185005874e-10
+   4.969702e-03   3    -15  -14  15 # 1.11185005874e-10
+   4.880977e-03   3    -14  -14  14 # 1.09199999601e-10
+#
+#      PDG        Width
+DECAY  9900014   1.500000e+00
+#
+#      PDG        Width
+DECAY  9900016   1.230000e+01
+</slha>
+<run_settings>
+fixed_order = OFF
+reweight = OFF
+madspin = ON
+shower = OFF
+madanalysis5 = Not installed
+order = NLO
+</run_settings>
+<madspin>
+set seed 1000001
+set ms_dir ./madspingrid
+
+set Nevents_for_max_weigth 250 # number of events for the estimate of the max. weight
+set max_weight_ps_point 400  # number of PS to estimate the maximum for each event
+
+set max_running_process 1
+set spinmode none
+
+decay n1 > mu j j
+
+launch
+</madspin>
+</header>
+</LesHouchesEvents>

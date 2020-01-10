@@ -1,0 +1,13 @@
+ Warning: parameter  nhel_refine  not found
+          setting it to default value            0
+ Running on Grid to generate         1200  events
+    with granularity equal to            1
+Using random seed offset:      1  with seed          31300031300
+ Using random seeds       30658       27144
+ Ranmar initialization seeds       30658       27144
+Reading total xsection    0.115E-07
+ Working on creating    1440.0000000000000       events.
+ Requesting events from G1.2   5.7409999999999999E-009   7.9673611111111112E-012
+ Opening file ajob1                         
+ Channel 1.2   720.56480432319358              720
+ Cross section           1   5.7409999999999999E-009           1

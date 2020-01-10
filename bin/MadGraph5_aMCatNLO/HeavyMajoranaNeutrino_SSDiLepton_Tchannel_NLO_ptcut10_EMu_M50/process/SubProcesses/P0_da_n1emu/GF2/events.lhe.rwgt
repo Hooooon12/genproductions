@@ -1,0 +1,434 @@
+<LesHouchesEvents version="3.0">
+  <!--
+  <initrwgt>
+    <weightgroup name='scale_variation   -1' combine='envelope'>
+      <weight id='1001'> dyn=  -1 muR=0.10000E+01 muF=0.10000E+01 </weight>
+      <weight id='1002'> dyn=  -1 muR=0.20000E+01 muF=0.10000E+01 </weight>
+      <weight id='1003'> dyn=  -1 muR=0.50000E+00 muF=0.10000E+01 </weight>
+      <weight id='1004'> dyn=  -1 muR=0.10000E+01 muF=0.20000E+01 </weight>
+      <weight id='1005'> dyn=  -1 muR=0.20000E+01 muF=0.20000E+01 </weight>
+      <weight id='1006'> dyn=  -1 muR=0.50000E+00 muF=0.20000E+01 </weight>
+      <weight id='1007'> dyn=  -1 muR=0.10000E+01 muF=0.50000E+00 </weight>
+      <weight id='1008'> dyn=  -1 muR=0.20000E+01 muF=0.50000E+00 </weight>
+      <weight id='1009'> dyn=  -1 muR=0.50000E+00 muF=0.50000E+00 </weight>
+    </weightgroup>
+    <weightgroup name='PDF_variation LUXqed17_plus_PDF4LHC15_nnlo_100' combine='unknown'>
+      <weight id='1010'> PDF=   82200 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1011'> PDF=   82201 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1012'> PDF=   82202 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1013'> PDF=   82203 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1014'> PDF=   82204 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1015'> PDF=   82205 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1016'> PDF=   82206 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1017'> PDF=   82207 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1018'> PDF=   82208 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1019'> PDF=   82209 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1020'> PDF=   82210 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1021'> PDF=   82211 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1022'> PDF=   82212 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1023'> PDF=   82213 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1024'> PDF=   82214 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1025'> PDF=   82215 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1026'> PDF=   82216 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1027'> PDF=   82217 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1028'> PDF=   82218 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1029'> PDF=   82219 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1030'> PDF=   82220 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1031'> PDF=   82221 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1032'> PDF=   82222 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1033'> PDF=   82223 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1034'> PDF=   82224 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1035'> PDF=   82225 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1036'> PDF=   82226 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1037'> PDF=   82227 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1038'> PDF=   82228 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1039'> PDF=   82229 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1040'> PDF=   82230 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1041'> PDF=   82231 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1042'> PDF=   82232 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1043'> PDF=   82233 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1044'> PDF=   82234 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1045'> PDF=   82235 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1046'> PDF=   82236 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1047'> PDF=   82237 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1048'> PDF=   82238 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1049'> PDF=   82239 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1050'> PDF=   82240 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1051'> PDF=   82241 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1052'> PDF=   82242 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1053'> PDF=   82243 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1054'> PDF=   82244 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1055'> PDF=   82245 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1056'> PDF=   82246 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1057'> PDF=   82247 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1058'> PDF=   82248 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1059'> PDF=   82249 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1060'> PDF=   82250 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1061'> PDF=   82251 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1062'> PDF=   82252 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1063'> PDF=   82253 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1064'> PDF=   82254 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1065'> PDF=   82255 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1066'> PDF=   82256 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1067'> PDF=   82257 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1068'> PDF=   82258 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1069'> PDF=   82259 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1070'> PDF=   82260 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1071'> PDF=   82261 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1072'> PDF=   82262 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1073'> PDF=   82263 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1074'> PDF=   82264 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1075'> PDF=   82265 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1076'> PDF=   82266 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1077'> PDF=   82267 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1078'> PDF=   82268 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1079'> PDF=   82269 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1080'> PDF=   82270 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1081'> PDF=   82271 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1082'> PDF=   82272 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1083'> PDF=   82273 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1084'> PDF=   82274 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1085'> PDF=   82275 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1086'> PDF=   82276 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1087'> PDF=   82277 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1088'> PDF=   82278 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1089'> PDF=   82279 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1090'> PDF=   82280 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1091'> PDF=   82281 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1092'> PDF=   82282 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1093'> PDF=   82283 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1094'> PDF=   82284 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1095'> PDF=   82285 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1096'> PDF=   82286 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1097'> PDF=   82287 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1098'> PDF=   82288 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1099'> PDF=   82289 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1100'> PDF=   82290 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1101'> PDF=   82291 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1102'> PDF=   82292 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1103'> PDF=   82293 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1104'> PDF=   82294 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1105'> PDF=   82295 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1106'> PDF=   82296 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1107'> PDF=   82297 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1108'> PDF=   82298 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1109'> PDF=   82299 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1110'> PDF=   82300 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1111'> PDF=   82301 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1112'> PDF=   82302 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1113'> PDF=   82303 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1114'> PDF=   82304 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1115'> PDF=   82305 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1116'> PDF=   82306 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+      <weight id='1117'> PDF=   82307 LUXqed17_plus_PDF4LHC15_nnlo_100 </weight>
+    </weightgroup>
+  </initrwgt>
+  <scalesfunctionalform>
+    muR  H_T/2 := sum_i mT(i)/2, i=final state
+    muF1 H_T/2 := sum_i mT(i)/2, i=final state
+    muF2 H_T/2 := sum_i mT(i)/2, i=final state
+    QES  H_T/2 := sum_i mT(i)/2, i=final state
+  </scalesfunctionalform>
+PYTHIA8   
+  -->
+  <header>
+        2
+  </header>
+  <init>
+   2212   2212 0.65000000E+04 0.65000000E+04 -1 -1  82200  82200 -4   1
+ 0.22022529E-05 0.58188970E-07 0.22273899E-05     66
+  </init>
+  <event>
+  6     66 -.22273899E-05 0.63419672E+02 0.78161638E-02 0.11672542E+00
+        1 -1    0    0  502    0 0.00000000E+00 0.00000000E+00 0.46810942E+03 0.46810942E+03 0.00000000E+00 0.0000E+00 0.9000E+01
+       22 -1    0    0    0    0 0.00000000E+00 0.00000000E+00 -.12411037E+04 0.12411037E+04 0.00000000E+00 0.0000E+00 0.9000E+01
+  9900012  1    1    2    0    0 0.35383302E+02 0.31204240E+02 -.12616564E+03 0.14367829E+03 0.50000000E+02 0.0000E+00 0.9000E+01
+       11  1    1    2    0    0 0.22627847E+02 -.18277289E+02 -.11006688E+04 0.11010531E+04 0.00000000E+00 0.0000E+00 0.9000E+01
+        2  1    1    2  501    0 -.66634339E+02 -.34477715E+02 0.36718864E+03 0.37477506E+03 0.00000000E+00 0.0000E+00 0.9000E+01
+       21  1    1    2  502  501 0.86231895E+01 0.21550764E+02 0.86651544E+02 0.89706660E+02 0.00000000E+00 0.0000E+00 0.9000E+01
+#aMCatNLO 2  0  0  1  5 0.23287663E+02 0.00000000E+00 -9  6  0 0.00000000E+00 0.00000000E+00 0.00000000E+00 0.00000000E+00 0.00000000E+00
+  <mgrwgt>
+ -.1112077282D-03    2    2    0
+ 0.686161685835147D+03 0.000000000000000D+00 0.000000000000000D+00 0.686161685835147D+03
+ 0.686161685835147D+03 0.000000000000000D+00 0.000000000000000D+00 -.686161685835147D+03
+ 0.912377848635133D+02 0.359542884946090D+02 0.326312272815412D+02 -.588797548546830D+02
+ 0.609753149114381D+03 0.264592250621135D+02 -.870204751866649D+01 -.609116644521392D+03
+ 0.671332437692399D+03 -.624135135567225D+02 -.239291797628747D+02 0.667996399376075D+03
+ 0.000000000000000D+00 0.000000000000000D+00 0.000000000000000D+00 0.000000000000000D+00
+ 0.845535818530186D+03 0.000000000000000D+00 0.000000000000000D+00 0.845535818530186D+03
+ 0.687105526354459D+03 0.000000000000000D+00 0.000000000000000D+00 -.687105526354459D+03
+ 0.905124753878482D+02 0.353833024993715D+02 0.312042396690936D+02 -.588797548546830D+02
+ 0.609810761950008D+03 0.226278472552711D+02 -.182772887935351D+02 -.609116644521392D+03
+ 0.672196427828851D+03 -.666343392399929D+02 -.344777151290030D+02 0.667996399376075D+03
+ 0.160121679717938D+03 0.862318948535028D+01 0.215507642534445D+02 0.158430292175727D+03
+-.497034891598D-03 0.000000000000D+00 0.000000000000D+00 0.409676871039D-05 0.000000000000D+00  6 1 22 9900012 11 2 21 2 0.72115895D-01 0.19067675D+00 0.96107277D+04 0.96107277D+04 0.96107277D+04 0.12111213D+01  1  2 13  1  6  1        1 -.123930518420D-03 0.100000000000D+01
+0.511050055275D-04 0.000000000000D+00 0.000000000000D+00 0.409676871039D-05 0.774459063089D-08  6 1 22 9900012 11 2 21 2 0.72016834D-01 0.19093903D+00 0.96107277D+04 0.96107277D+04 0.96107277D+04 0.12111213D+01  1  2  1  1  6  1        1 0.127227902217D-04 0.100000000000D+01
+  </mgrwgt>
+  <rwgt>
+   <wgt id='1001'> -.22274E-05 </wgt>
+   <wgt id='1002'> -.20188E-05 </wgt>
+   <wgt id='1003'> -.24855E-05 </wgt>
+   <wgt id='1004'> -.22898E-05 </wgt>
+   <wgt id='1005'> -.20754E-05 </wgt>
+   <wgt id='1006'> -.25551E-05 </wgt>
+   <wgt id='1007'> -.21522E-05 </wgt>
+   <wgt id='1008'> -.19507E-05 </wgt>
+   <wgt id='1009'> -.24016E-05 </wgt>
+   <wgt id='1010'> -.22274E-05 </wgt>
+   <wgt id='1011'> -.22298E-05 </wgt>
+   <wgt id='1012'> -.22237E-05 </wgt>
+   <wgt id='1013'> -.22280E-05 </wgt>
+   <wgt id='1014'> -.22292E-05 </wgt>
+   <wgt id='1015'> -.22321E-05 </wgt>
+   <wgt id='1016'> -.22311E-05 </wgt>
+   <wgt id='1017'> -.22268E-05 </wgt>
+   <wgt id='1018'> -.22263E-05 </wgt>
+   <wgt id='1019'> -.22239E-05 </wgt>
+   <wgt id='1020'> -.22311E-05 </wgt>
+   <wgt id='1021'> -.22303E-05 </wgt>
+   <wgt id='1022'> -.22320E-05 </wgt>
+   <wgt id='1023'> -.22345E-05 </wgt>
+   <wgt id='1024'> -.22225E-05 </wgt>
+   <wgt id='1025'> -.22422E-05 </wgt>
+   <wgt id='1026'> -.22211E-05 </wgt>
+   <wgt id='1027'> -.22282E-05 </wgt>
+   <wgt id='1028'> -.22327E-05 </wgt>
+   <wgt id='1029'> -.22134E-05 </wgt>
+   <wgt id='1030'> -.22256E-05 </wgt>
+   <wgt id='1031'> -.22328E-05 </wgt>
+   <wgt id='1032'> -.22050E-05 </wgt>
+   <wgt id='1033'> -.22341E-05 </wgt>
+   <wgt id='1034'> -.22395E-05 </wgt>
+   <wgt id='1035'> -.22200E-05 </wgt>
+   <wgt id='1036'> -.22186E-05 </wgt>
+   <wgt id='1037'> -.22358E-05 </wgt>
+   <wgt id='1038'> -.22233E-05 </wgt>
+   <wgt id='1039'> -.22130E-05 </wgt>
+   <wgt id='1040'> -.22260E-05 </wgt>
+   <wgt id='1041'> -.22279E-05 </wgt>
+   <wgt id='1042'> -.22375E-05 </wgt>
+   <wgt id='1043'> -.22309E-05 </wgt>
+   <wgt id='1044'> -.22269E-05 </wgt>
+   <wgt id='1045'> -.22271E-05 </wgt>
+   <wgt id='1046'> -.22215E-05 </wgt>
+   <wgt id='1047'> -.22372E-05 </wgt>
+   <wgt id='1048'> -.22386E-05 </wgt>
+   <wgt id='1049'> -.22218E-05 </wgt>
+   <wgt id='1050'> -.22283E-05 </wgt>
+   <wgt id='1051'> -.22178E-05 </wgt>
+   <wgt id='1052'> -.22238E-05 </wgt>
+   <wgt id='1053'> -.22306E-05 </wgt>
+   <wgt id='1054'> -.22307E-05 </wgt>
+   <wgt id='1055'> -.22281E-05 </wgt>
+   <wgt id='1056'> -.22293E-05 </wgt>
+   <wgt id='1057'> -.22221E-05 </wgt>
+   <wgt id='1058'> -.22239E-05 </wgt>
+   <wgt id='1059'> -.22246E-05 </wgt>
+   <wgt id='1060'> -.22283E-05 </wgt>
+   <wgt id='1061'> -.22293E-05 </wgt>
+   <wgt id='1062'> -.22285E-05 </wgt>
+   <wgt id='1063'> -.22236E-05 </wgt>
+   <wgt id='1064'> -.22289E-05 </wgt>
+   <wgt id='1065'> -.22227E-05 </wgt>
+   <wgt id='1066'> -.22321E-05 </wgt>
+   <wgt id='1067'> -.22292E-05 </wgt>
+   <wgt id='1068'> -.22270E-05 </wgt>
+   <wgt id='1069'> -.22286E-05 </wgt>
+   <wgt id='1070'> -.22249E-05 </wgt>
+   <wgt id='1071'> -.22317E-05 </wgt>
+   <wgt id='1072'> -.22258E-05 </wgt>
+   <wgt id='1073'> -.22279E-05 </wgt>
+   <wgt id='1074'> -.22265E-05 </wgt>
+   <wgt id='1075'> -.22231E-05 </wgt>
+   <wgt id='1076'> -.22257E-05 </wgt>
+   <wgt id='1077'> -.22268E-05 </wgt>
+   <wgt id='1078'> -.22283E-05 </wgt>
+   <wgt id='1079'> -.22264E-05 </wgt>
+   <wgt id='1080'> -.22261E-05 </wgt>
+   <wgt id='1081'> -.22291E-05 </wgt>
+   <wgt id='1082'> -.22254E-05 </wgt>
+   <wgt id='1083'> -.22272E-05 </wgt>
+   <wgt id='1084'> -.22261E-05 </wgt>
+   <wgt id='1085'> -.22283E-05 </wgt>
+   <wgt id='1086'> -.22280E-05 </wgt>
+   <wgt id='1087'> -.22282E-05 </wgt>
+   <wgt id='1088'> -.22277E-05 </wgt>
+   <wgt id='1089'> -.22274E-05 </wgt>
+   <wgt id='1090'> -.22294E-05 </wgt>
+   <wgt id='1091'> -.22263E-05 </wgt>
+   <wgt id='1092'> -.22280E-05 </wgt>
+   <wgt id='1093'> -.22258E-05 </wgt>
+   <wgt id='1094'> -.22259E-05 </wgt>
+   <wgt id='1095'> -.22276E-05 </wgt>
+   <wgt id='1096'> -.22285E-05 </wgt>
+   <wgt id='1097'> -.22251E-05 </wgt>
+   <wgt id='1098'> -.22270E-05 </wgt>
+   <wgt id='1099'> -.22261E-05 </wgt>
+   <wgt id='1100'> -.22284E-05 </wgt>
+   <wgt id='1101'> -.22265E-05 </wgt>
+   <wgt id='1102'> -.22259E-05 </wgt>
+   <wgt id='1103'> -.22277E-05 </wgt>
+   <wgt id='1104'> -.22272E-05 </wgt>
+   <wgt id='1105'> -.22275E-05 </wgt>
+   <wgt id='1106'> -.22283E-05 </wgt>
+   <wgt id='1107'> -.22280E-05 </wgt>
+   <wgt id='1108'> -.22273E-05 </wgt>
+   <wgt id='1109'> -.22272E-05 </wgt>
+   <wgt id='1110'> -.22276E-05 </wgt>
+   <wgt id='1111'> -.22332E-05 </wgt>
+   <wgt id='1112'> -.22485E-05 </wgt>
+   <wgt id='1113'> -.22256E-05 </wgt>
+   <wgt id='1114'> -.22245E-05 </wgt>
+   <wgt id='1115'> -.22197E-05 </wgt>
+   <wgt id='1116'> -.22269E-05 </wgt>
+   <wgt id='1117'> -.22370E-05 </wgt>
+  </rwgt>
+  </event>
+  <event>
+  5     66 0.22273899E-05 0.29570748E+02 0.78161638E-02 0.12345635E+00
+        3 -1    0    0  501    0 0.00000000E+00 0.00000000E+00 0.10130258E+04 0.10130258E+04 0.00000000E+00 0.0000E+00 0.9000E+01
+       22 -1    0    0    0    0 0.00000000E+00 0.00000000E+00 -.87235102E+01 0.87235102E+01 0.00000000E+00 0.0000E+00 0.9000E+01
+  9900012  1    1    2    0    0 -.63476864E+01 0.20119760E+02 0.16834857E+03 0.17687945E+03 0.50000000E+02 0.0000E+00 0.9000E+01
+       11  1    1    2    0    0 0.30685289E+02 -.33236228E+01 0.52809873E+02 0.61167934E+02 0.00000000E+00 0.0000E+00 0.9000E+01
+        4  1    1    2  501    0 -.24337603E+02 -.16796137E+02 0.78314381E+03 0.78370189E+03 0.00000000E+00 0.0000E+00 0.9000E+01
+#aMCatNLO 1  0  0  5  5 0.22574416E+02 0.00000000E+00 -9  6  0 0.00000000E+00 0.00000000E+00 0.00000000E+00 0.00000000E+00 0.00000000E+00
+  <mgrwgt>
+ 0.3230163114D-06    4    2    0
+ 0.940060665004809D+02 0.000000000000000D+00 0.000000000000000D+00 0.940060665004809D+02
+ 0.940060665004809D+02 -.000000000000000D+00 -.000000000000000D+00 -.940060665004809D+02
+ 0.619832257232901D+02 -.634768637102686D+01 0.201197596242240D+02 -.299469935296158D+02
+ 0.503223768644302D+02 0.306852891170761D+02 -.332362279297925D+01 -.397455428522140D+02
+ 0.757065304132415D+02 -.243376027460493D+02 -.167961368312447D+02 0.696925363818298D+02
+ 0.000000000000000D+00 0.000000000000000D+00 0.000000000000000D+00 0.000000000000000D+00
+ 0.940060665004809D+02 0.000000000000000D+00 0.000000000000000D+00 0.940060665004809D+02
+ 0.940060665004809D+02 -.000000000000000D+00 -.000000000000000D+00 -.940060665004809D+02
+ 0.585232074829683D+02 -.892748153506764D+01 0.183393627205542D+02 -.225595581193322D+02
+ 0.446548983314614D+02 0.286520207784078D+02 -.472684453126052D+01 -.339231276724911D+02
+ 0.694471166227497D+02 -.349895523094704D+02 -.144608467396089D+02 0.582195598400588D+02
+ 0.153869105637824D+02 0.152650130661302D+02 0.848328550315263D+00 -.173687404823555D+01
+0.279019245218D-07 0.000000000000D+00 0.000000000000D+00 0.181485048007D-06 0.000000000000D+00  6 3 22 9900012 11 4 21 0 0.15585012D+00 0.13420785D-02 0.32892670D+04 0.32892670D+04 0.32892670D+04 0.12628545D+01  1  2  2  2  6  5        4 0.389170850730D-06 0.100000000000D+01
+0.162488505068D-08 0.000000000000D+00 -.535753684546D-10 0.181485048007D-06 0.000000000000D+00  6 3 22 9900012 11 4 21 2 0.15585012D+00 0.13420785D-02 0.32892670D+04 0.32892670D+04 0.32892670D+04 0.12628545D+01  1  2  3  2  6  5        4 0.361439334765D-07 0.100000000000D+01
+-.418650150424D-08 0.000000000000D+00 0.000000000000D+00 0.181485048007D-06 0.000000000000D+00  6 3 22 9900012 11 4 21 2 0.15585012D+00 0.13420785D-02 0.32892670D+04 0.32892670D+04 0.32892670D+04 0.12628545D+01  1  2 15  2  6  5        4 -.931245147499D-07 0.100000000000D+01
+-.412424048086D-09 0.000000000000D+00 0.000000000000D+00 0.181485048007D-06 0.000000000000D+00  6 3 22 9900012 11 4 21 2 0.15585012D+00 0.13420785D-02 0.32892670D+04 0.32892670D+04 0.32892670D+04 0.12628545D+01  1  2  4  2  6  5        4 -.917395809134D-08 0.100000000000D+01
+  </mgrwgt>
+  <rwgt>
+   <wgt id='1001'> 0.22274E-05 </wgt>
+   <wgt id='1002'> 0.22736E-05 </wgt>
+   <wgt id='1003'> 0.21690E-05 </wgt>
+   <wgt id='1004'> 0.24643E-05 </wgt>
+   <wgt id='1005'> 0.25170E-05 </wgt>
+   <wgt id='1006'> 0.23978E-05 </wgt>
+   <wgt id='1007'> 0.19888E-05 </wgt>
+   <wgt id='1008'> 0.20288E-05 </wgt>
+   <wgt id='1009'> 0.19383E-05 </wgt>
+   <wgt id='1010'> 0.22274E-05 </wgt>
+   <wgt id='1011'> 0.22291E-05 </wgt>
+   <wgt id='1012'> 0.22727E-05 </wgt>
+   <wgt id='1013'> 0.21998E-05 </wgt>
+   <wgt id='1014'> 0.21410E-05 </wgt>
+   <wgt id='1015'> 0.21399E-05 </wgt>
+   <wgt id='1016'> 0.21597E-05 </wgt>
+   <wgt id='1017'> 0.22247E-05 </wgt>
+   <wgt id='1018'> 0.22357E-05 </wgt>
+   <wgt id='1019'> 0.21892E-05 </wgt>
+   <wgt id='1020'> 0.22488E-05 </wgt>
+   <wgt id='1021'> 0.20883E-05 </wgt>
+   <wgt id='1022'> 0.22141E-05 </wgt>
+   <wgt id='1023'> 0.21930E-05 </wgt>
+   <wgt id='1024'> 0.22770E-05 </wgt>
+   <wgt id='1025'> 0.22619E-05 </wgt>
+   <wgt id='1026'> 0.22202E-05 </wgt>
+   <wgt id='1027'> 0.22883E-05 </wgt>
+   <wgt id='1028'> 0.21102E-05 </wgt>
+   <wgt id='1029'> 0.23279E-05 </wgt>
+   <wgt id='1030'> 0.22202E-05 </wgt>
+   <wgt id='1031'> 0.22779E-05 </wgt>
+   <wgt id='1032'> 0.23363E-05 </wgt>
+   <wgt id='1033'> 0.23617E-05 </wgt>
+   <wgt id='1034'> 0.21500E-05 </wgt>
+   <wgt id='1035'> 0.22217E-05 </wgt>
+   <wgt id='1036'> 0.23173E-05 </wgt>
+   <wgt id='1037'> 0.21684E-05 </wgt>
+   <wgt id='1038'> 0.22449E-05 </wgt>
+   <wgt id='1039'> 0.23001E-05 </wgt>
+   <wgt id='1040'> 0.22114E-05 </wgt>
+   <wgt id='1041'> 0.23051E-05 </wgt>
+   <wgt id='1042'> 0.21194E-05 </wgt>
+   <wgt id='1043'> 0.22255E-05 </wgt>
+   <wgt id='1044'> 0.21951E-05 </wgt>
+   <wgt id='1045'> 0.22037E-05 </wgt>
+   <wgt id='1046'> 0.22074E-05 </wgt>
+   <wgt id='1047'> 0.21677E-05 </wgt>
+   <wgt id='1048'> 0.21292E-05 </wgt>
+   <wgt id='1049'> 0.22006E-05 </wgt>
+   <wgt id='1050'> 0.22246E-05 </wgt>
+   <wgt id='1051'> 0.23524E-05 </wgt>
+   <wgt id='1052'> 0.22468E-05 </wgt>
+   <wgt id='1053'> 0.22906E-05 </wgt>
+   <wgt id='1054'> 0.22206E-05 </wgt>
+   <wgt id='1055'> 0.22489E-05 </wgt>
+   <wgt id='1056'> 0.22649E-05 </wgt>
+   <wgt id='1057'> 0.22528E-05 </wgt>
+   <wgt id='1058'> 0.22082E-05 </wgt>
+   <wgt id='1059'> 0.22528E-05 </wgt>
+   <wgt id='1060'> 0.22132E-05 </wgt>
+   <wgt id='1061'> 0.22288E-05 </wgt>
+   <wgt id='1062'> 0.22715E-05 </wgt>
+   <wgt id='1063'> 0.22459E-05 </wgt>
+   <wgt id='1064'> 0.22157E-05 </wgt>
+   <wgt id='1065'> 0.21814E-05 </wgt>
+   <wgt id='1066'> 0.22787E-05 </wgt>
+   <wgt id='1067'> 0.22362E-05 </wgt>
+   <wgt id='1068'> 0.21624E-05 </wgt>
+   <wgt id='1069'> 0.21969E-05 </wgt>
+   <wgt id='1070'> 0.22203E-05 </wgt>
+   <wgt id='1071'> 0.22447E-05 </wgt>
+   <wgt id='1072'> 0.22404E-05 </wgt>
+   <wgt id='1073'> 0.22447E-05 </wgt>
+   <wgt id='1074'> 0.22096E-05 </wgt>
+   <wgt id='1075'> 0.22282E-05 </wgt>
+   <wgt id='1076'> 0.21932E-05 </wgt>
+   <wgt id='1077'> 0.22290E-05 </wgt>
+   <wgt id='1078'> 0.22128E-05 </wgt>
+   <wgt id='1079'> 0.22180E-05 </wgt>
+   <wgt id='1080'> 0.22216E-05 </wgt>
+   <wgt id='1081'> 0.22716E-05 </wgt>
+   <wgt id='1082'> 0.22315E-05 </wgt>
+   <wgt id='1083'> 0.22246E-05 </wgt>
+   <wgt id='1084'> 0.22368E-05 </wgt>
+   <wgt id='1085'> 0.22342E-05 </wgt>
+   <wgt id='1086'> 0.22225E-05 </wgt>
+   <wgt id='1087'> 0.22318E-05 </wgt>
+   <wgt id='1088'> 0.22375E-05 </wgt>
+   <wgt id='1089'> 0.22453E-05 </wgt>
+   <wgt id='1090'> 0.22259E-05 </wgt>
+   <wgt id='1091'> 0.22379E-05 </wgt>
+   <wgt id='1092'> 0.22339E-05 </wgt>
+   <wgt id='1093'> 0.22157E-05 </wgt>
+   <wgt id='1094'> 0.22422E-05 </wgt>
+   <wgt id='1095'> 0.22299E-05 </wgt>
+   <wgt id='1096'> 0.22441E-05 </wgt>
+   <wgt id='1097'> 0.22168E-05 </wgt>
+   <wgt id='1098'> 0.22236E-05 </wgt>
+   <wgt id='1099'> 0.22233E-05 </wgt>
+   <wgt id='1100'> 0.22323E-05 </wgt>
+   <wgt id='1101'> 0.22210E-05 </wgt>
+   <wgt id='1102'> 0.22252E-05 </wgt>
+   <wgt id='1103'> 0.22266E-05 </wgt>
+   <wgt id='1104'> 0.22282E-05 </wgt>
+   <wgt id='1105'> 0.22305E-05 </wgt>
+   <wgt id='1106'> 0.22424E-05 </wgt>
+   <wgt id='1107'> 0.22215E-05 </wgt>
+   <wgt id='1108'> 0.22428E-05 </wgt>
+   <wgt id='1109'> 0.22073E-05 </wgt>
+   <wgt id='1110'> 0.22365E-05 </wgt>
+   <wgt id='1111'> 0.22267E-05 </wgt>
+   <wgt id='1112'> 0.22296E-05 </wgt>
+   <wgt id='1113'> 0.22255E-05 </wgt>
+   <wgt id='1114'> 0.22272E-05 </wgt>
+   <wgt id='1115'> 0.22262E-05 </wgt>
+   <wgt id='1116'> 0.22267E-05 </wgt>
+   <wgt id='1117'> 0.22357E-05 </wgt>
+  </rwgt>
+  </event>
+</LesHouchesEvents>

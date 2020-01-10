@@ -1,0 +1,31 @@
+ No PDF is used, alpha_s(MZ) from param_card is used
+ Value of alpha_s from param_card:   0.11839999999999999     
+ The default order of alpha_s running is fixed to            2
+ Results.dat xsec =    1.1427000000000000E-008  abs xsec =    1.1427000000000000E-008
+ Found            2  subprocesses
+ SubProcess/Channel     kept   read   xsec 
+P0_n1_mumudx/G1.2/     840     840 0.567E-08
+P0_n1_mupdux/G1.2/    1661    1661 0.114E-07
+ Iteration            1  too large truncation   0.83873786407766215             1661
+ Iteration            2  too large truncation   0.79035922330096797             1661
+ Iteration            3  too large truncation   0.72746699029124640             1661
+ Iteration            4  too large truncation   0.64570708737863258             1661
+ Iteration            5  too large truncation   0.53941921359224321             1661
+ Iteration            6  too large truncation   0.40124497766989003             1661
+ Iteration            7  too large truncation   0.22161847097085952             1661
+ Iteration            8  too few events    3.9722046262895359E-003        1641
+ Iteration            9  too large truncation    3.8698811649017964E-002        1661
+ Iteration           10  too few events    0.0000000000000000             1304
+ Iteration           11  too few events    0.0000000000000000             1390
+ Iteration           12  too few events    0.0000000000000000             1469
+ Iteration           13  too few events    0.0000000000000000             1546
+ Iteration           14  too few events    1.0136458037202502E-003        1636
+ Iteration           15  too large truncation    3.3012504835288836E-002        1661
+ Iteration           16  too few events    0.0000000000000000             1315
+ Iteration           17  too few events    0.0000000000000000             1377
+ Iteration           18  too few events    0.0000000000000000             1459
+ Iteration           19  too few events    0.0000000000000000             1552
+ Iteration           20  too few events    0.0000000000000000             1622
+ Unable to get        10000  events. Writing         1622
+ Unweighting selected         1622  events.
+Truncated  0.00% of cross section
