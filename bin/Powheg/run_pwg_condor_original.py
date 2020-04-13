@@ -273,13 +273,12 @@ def runGetSource(parstage, xgrid, folderName, powInputName, process, noPdfCheck,
         "process" : process,
         "noPdfCheck" : noPdfCheck,
         "rootfolder" : rootfolder,
-        "patches_dir" : os.path.dirname(os.path.realpath(__file__)) + "/patches",
-        "patch" : helpers.runGetSource_patch(process)
     }
+    template_dict["patches_dir"] = os.path.dirname(os.path.realpath(__file__)) + "/patches"
 
     fourFlavorProcesses = ["ST_tch_4f", "bbH", "Wbb_dec", "Wbbj", "WWJ"]
     template_dict["isFiveFlavor"] = int(process not in fourFlavorProcesses)
-    template_dict["defaultPDF"] = 306000 if template_dict["isFiveFlavor"] else 320900 #JH : FIXME defaultPDF is inconsistent with the main
+    template_dict["defaultPDF"] = 306000 if template_dict["isFiveFlavor"] else 320900
 
     DYNNLOPS = ["Zj", "Wj"]
     if process in DYNNLOPS:
@@ -728,31 +727,30 @@ if __name__ == "__main__":
         prepareJob(tagName, '', '.')
 
         if not os.path.exists(args.inputTemplate) :
-            m_ret = os.system('wget --quiet --no-check-certificate -N http://cms-project-generators.web.cern.ch/cms-project-generators/'+args.inputTemplate+' -O '+args.folderName+'/powheg.input') 
+            m_ret = os.system('wget --quiet --no-check-certificate -N http://cms-project-generators.web.cern.ch/cms-project-generators/'+args.inputTemplate+' -O '+args.folderName+'/powheg.input')
 
             os.system('wget --quiet --no-check-certificate -N http://cms-project-generators.web.cern.ch/cms-project-generators/'+args.inputTemplate)
         
-        os.system('mkdir -p '+rootfolder+'/'+args.folderName) #JH : make folderName(-f) directory
-
+        os.system('mkdir -p '+rootfolder+'/'+args.folderName)
         if not os.path.exists(args.inputTemplate) :
             os.system('wget --quiet --no-check-certificate -N http://cms-project-generators.web.cern.ch/cms-project-generators/'+args.inputTemplate+' -O '+args.folderName+'/powheg.input')
         else :
-            os.system('cp -p '+args.inputTemplate+' '+args.folderName+'/powheg.input') #JH : FIXME this seems redundant
+            os.system('cp -p '+args.inputTemplate+' '+args.folderName+'/powheg.input')
 
-        os.system('rm -rf JHUGen.input') #JH : remove pre-existing JHUGen.input
+        os.system('rm -rf JHUGen.input')
         inputJHUGen = args.inputJHUGen
         if args.inputJHUGen == "":
-            inputJHUGen = '/'.join(powInputName.split('/')[0:-1])+'/JHUGen.input' #JH : replace /process_channel.input with /JHUGen.input
+            inputJHUGen = '/'.join(powInputName.split('/')[0:-1])+'/JHUGen.input'
 
         if not os.path.exists(inputJHUGen) :
             m_ret = os.system('wget --quiet --no-check-certificate -N http://cms-project-generators.web.cern.ch/cms-project-generators/'+inputJHUGen+' -O '+args.folderName+'/JHUGen.input')
             if ((m_ret>>8) & 255) != 0 :
-                os.system('rm -rf '+args.folderName+'/JHUGen.input') #JH : m_ret returns 0 if success, else 256. That is, if wget failed then remove JHUGen.input
+                os.system('rm -rf '+args.folderName+'/JHUGen.input')
 
         else :
             os.system('cp -p '+inputJHUGen+' '+args.folderName+'/JHUGen.input')
 
-        if os.path.exists(args.folderName+'/powheg.input') : #JH : if powheg.input exists normally, then start pdf check
+        if os.path.exists(args.folderName+'/powheg.input') :
             test_pdf1 = 0
             test_pdf2 = 0
 
@@ -786,10 +784,10 @@ if __name__ == "__main__":
         tagName = 'src_'+args.folderName
         filename = './run_'+tagName+'.sh'
 
-        prepareJob(tagName, '', '.') #JH : FIXME This is also redundant..
+        prepareJob(tagName, '', '.')
 
         runGetSource(args.parstage, args.xgrid, args.folderName,
-                     powInputName, args.prcName, args.noPdfCheck, tagName) #JH : NOTE -p 0 -> prepareJob 2 times(!), runGetSource.
+                     powInputName, args.prcName, args.noPdfCheck, tagName)
 
         if QUEUE == 'none':
             print 'Direct compiling... \n'
