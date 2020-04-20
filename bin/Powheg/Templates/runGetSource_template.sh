@@ -3,7 +3,7 @@ export cardInput=$powInputName
 export process=$process
 export noPdfCheck=$noPdfCheck
 export WORKDIR=$rootfolder
-export patches_dir=$patches_dir #JH : to handle ${patches_dir} in the $patch
+export patches_dir=$patches_dir #JH : used when doing patch
 # Release to be used to define the environment and the compiler needed
 export RELEASE=$${CMSSW_VERSION}
 export jhugenversion="v7.2.7" 
@@ -85,30 +85,7 @@ fi
 patch -l -p0 -i ${patches_dir}/pdfweights.patch
 patch -l -p0 -i ${patches_dir}/pwhg_lhepdf.patch
 
-#if [ "$$process" = "WZ" ] || [ "$$process" = "ZZ" ]; then
-#   patch -l -p0 -i ${patches_dir}/lhapdf_zanderighi.patch
-#fi
-#
-#if [ "$$process" = "b_bbar_4l" ]; then
-#    cd POWHEG-BOX
-#    patch -l -p0 -i ${patches_dir}/res_openloops_long_install_dir.patch
-#    cd ..
-#fi
-#if [ "$$process" = "ttb_NLO_dec" ]; then
-#    patch -l -p0 -i ${patches_dir}/pwhg_ttb_NLO_dec_gen_radiation_hook.patch
-#fi
-#if [ "$$process" = "ZZ" ]; then
-#    patch -l -p0 -i ${patches_dir}/zz_m4lcut.patch
-#fi
-#if [ "$$process" = "WWJ" ]; then
-#    patch -l -p0 -i ${patches_dir}/wwj-weights.patch
-#    cp ${patches_dir}/rwl_write_weights2_extra.f POWHEG-BOX/$$process/
-#fi
-#if [ "$$process" = "Zj" ] || [ "$$process" = "Wj" ]; then
-#    patch -l -p0 -i ${patches_dir}/pwhg_write_weights_nnlo.patch
-#fi
-
-$patch #JH : first trial
+$patch #JH : first patch
 
 sed -i -e "s#500#1350#g"  POWHEG-BOX/include/pwhg_rwl.h
 
