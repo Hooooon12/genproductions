@@ -152,7 +152,7 @@ grep -q "pdfreweight 1" powheg.input ; test $? -eq 0 || produceWeights="false"
 grep -q "first runx" powheg.input ; test $? -ne 0 || produceWeights="true"
 
 cat powheg.input
-../pwhg_main &> log_${process}_${seed}.txt; test $? -eq 0 || fail_exit "pwhg_main error: exit code not 0"
+../pwhg_main &> log_${process}_${seed}.txt; test $? -eq 0 || fail_exit "pwhg_main error: exit code not 0" #JH : this takes powheg.input ...? really? TODO
 
 if [ "$produceWeightsNNLO" == "true" ]; then
     echo -e "\ncomputing weights for NNLOPS\n"

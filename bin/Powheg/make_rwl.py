@@ -182,18 +182,18 @@ else:
           }
   
 pdf_count = 0
-for key, pdfsets in sorted(pdf_sets.iteritems()):
-  weightgroup_name = key.replace(" ", "").split(',')[0]
-  combine = key.replace(" ", "").split(',')[1]
+for key, pdfsets in sorted(pdf_sets.iteritems()): #JH : sorted -> ascending order(PDF_variation1 first)
+  weightgroup_name = key.replace(" ", "").split(',')[0] #JH : PDF_variation1(2)
+  combine = key.replace(" ", "").split(',')[1] #JH : hessian(replica)
   print 'weightgroup_name',weightgroup_name,'combine',combine
-  fout.write("<weightgroup name='"+weightgroup_name+"' combine='"+combine+"' >\n")
-  for pdf in pdfsets:
+  fout.write("<weightgroup name='"+weightgroup_name+"' combine='"+combine+"' >\n") #JH : <weightgroup name='PDF_variaion1' combine='hessian' >
+  for pdf in pdfsets: #JH : for [2000, 320900, 'NNPDF31_nnlo_hessian_pdfas', 101] ...
     print 'pdf',pdf
-    m_idx = pdf[0]
-    pdf_member_start = pdf[1]
-    pdf_member_end = pdf[1] + pdf[3]
-    for idx in range(pdf_member_start, pdf_member_end) :
-      fout.write("<weight id='"+str(m_idx)+"'> lhapdf="+str(idx)+" </weight>\n")
+    m_idx = pdf[0] #JH : 2000
+    pdf_member_start = pdf[1] #JH : 320900
+    pdf_member_end = pdf[1] + pdf[3] #JH : 321001
+    for idx in range(pdf_member_start, pdf_member_end) : #JH : 320900 to 321000
+      fout.write("<weight id='"+str(m_idx)+"'> lhapdf="+str(idx)+" </weight>\n") #JH : <weight id='2000'> lhapdf=320900 </weight> ... 
       m_idx = m_idx + 1
       pdf_count += 1
   fout.write("</weightgroup>\n")
