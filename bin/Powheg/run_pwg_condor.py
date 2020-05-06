@@ -274,7 +274,14 @@ def runGetSource(parstage, xgrid, folderName, powInputName, process, noPdfCheck,
         "noPdfCheck" : noPdfCheck,
         "rootfolder" : rootfolder,
         "patches_dir" : os.path.dirname(os.path.realpath(__file__)) + "/patches",
-        "patch" : helpers.runGetSource_patch(process)
+        "patch_1" : helpers.runGetSource_patch_1(process),
+        "patch_2" : helpers.runGetSource_patch_2(process),
+        "patch_3" : helpers.runGetSource_patch_3(process),
+        "patch_4" : helpers.runGetSource_patch_4(process),
+        "patch_5" : helpers.runGetSource_patch_5(process),
+        "patch_6" : helpers.runGetSource_patch_6(process),
+        "patch_7" : helpers.runGetSource_patch_7(process),
+        "patch_8" : helpers.runGetSource_patch_8(process),
     }
 
     fourFlavorProcesses = ["ST_tch_4f", "bbH", "Wbb_dec", "Wbbj", "WWJ"]
