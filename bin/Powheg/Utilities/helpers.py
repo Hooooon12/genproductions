@@ -119,7 +119,8 @@ def runGetSource_patch_6(process) :
   return {
     "WWJ" : "cp Makefile Makefile.orig\n \
 cat Makefile.orig | sed -e \"s#FASTJET_CONFIG=.\+#FASTJET_CONFIG=$(scram tool info fastjet | grep BASE | cut -d \"=\" -f2)/bin/fastjet-config#g\" | sed -e \"s#cs_angles.o#cs_angles.o fastjetfortran.o observables.o pwhg_bookhist-multi-new.o#g\" | sed -e \"s#\#\ FASTJET_CONFIG#FASTJET_CONFIG#g\" | sed -e \"s#\#\ LIBSFASTJET#LIBSFASTJET#g\" | sed -e \"s#\#\ FJCXXFLAGS#FJCXXFLAGS#g\" | sed -e \"s#rwl_write_weights_extra.f#rwl_write_weights_extra.f\ rwl_write_weights2_extra.f#g\" > Makefile",
-    "gg_H_2HDM" : "echo \"Adding CHAPLIN 1.2 library\"
+
+    "gg_H_2HDM" : "echo \"Adding CHAPLIN 1.2 library\"\n \
 if [ ! -f chaplin-1.2.tar ]; then\n \
   wget --no-verbose http://chaplin.hepforge.org/code/chaplin-1.2.tar || fail_exit \"Failed to get CHAPLIN tar ball \"\n \
 fi\n \
@@ -130,7 +131,8 @@ make install\n \
 cd ..\n \
 echo \"LIBS+=-L`pwd`/lib/ -L`pwd`/lib64/\" >> Makefile   # be safe \n \
 export LD_LIBRARY_PATH=`pwd`/lib/:`pwd`/lib64/:${LD_LIBRARY_PATH}",
-    "gg_H_MSSM" : "echo \"Adding CHAPLIN 1.2 library\"
+
+    "gg_H_MSSM" : "echo \"Adding CHAPLIN 1.2 library\"\n \
 if [ ! -f chaplin-1.2.tar ]; then\n \
   wget --no-verbose http://chaplin.hepforge.org/code/chaplin-1.2.tar || fail_exit \"Failed to get CHAPLIN tar ball \"\n \
 fi\n \
@@ -151,6 +153,7 @@ cd FeynHiggs-2.10.2\n \
 make\n \
 make install\n \
 cd ..",
+
     "directphoton" : "echo \"Adding LoopTools 2.14 library\"\n \
 if [ ! -f LoopTools-2.14.tar.gz ]; then\n \
   wget --no-verbose http://www.feynarts.de/looptools/LoopTools-2.14.tar.gz || fail_exit \"Failed to get LoopTools tar ball \"\n \
@@ -163,6 +166,7 @@ cd ..\n \
 sed -i -e 's/^LT\=$.*/LT=$\(PWD\)/' Makefile\n \
 export LD_LIBRARY_PATH=`pwd`/lib/:`pwd`/lib64/:${LD_LIBRARY_PATH}\n \
 mkdir obj-gfortran",
+
     "vbs-ssww-nloew" : "echo \"Adding Recola2.2.0 library\"\n \
 if [ ! -f recola2-collier-2.2.0.tar.gz ]; then\n \
   wget --no-verbose -O recola2-collier-2.2.0.tar.gz https://recola.hepforge.org/downloads/?f=recola2-collier-2.2.0.tar.gz || fail_exit \"Failed to get Recola tar ball \"\n \
@@ -187,6 +191,7 @@ def runGetSource_patch_7(process) :
     "HJ" : "echo \"fixing q2min determination for HJ\"\n \
 # avoid accessing member 1 for q2min determination. Use member 0, as member 1 may not be available\n \
 sed -i \"s/getq2min(1,tmp)/getq2min(0,tmp)/g\" setlocalscales.f",
+
     "ST_wtch_DR" : "echo \"D/L QCDLoop-1.9 library\"\n \
 if [ ! -f FeynHiggs-2.10.2.tar.gz ]; then\n \
   wget --no-verbose http://qcdloop.fnal.gov/QCDLoop-1.96.tar.gz || fail_exit \"Failed to get QCDLoop tar ball\"\n \
@@ -197,6 +202,7 @@ sed -i -e 's#/Users/ellis/QCDLoop#./QCDLoop#' ff/ffinit_mine.f\n \
 cd QCDLoop-1.9\n \
 make\n \
 cd ..",
+
     "ST_wtch_DS" : "echo \"D/L QCDLoop-1.9 library\"\n \
 if [ ! -f FeynHiggs-2.10.2.tar.gz ]; then\n \
   wget --no-verbose http://qcdloop.fnal.gov/QCDLoop-1.96.tar.gz || fail_exit \"Failed to get QCDLoop tar ball\"\n \
@@ -228,9 +234,9 @@ cp bin/br.* ${WORKDIR}/${name}/\n \
 cd ${WORKDIR}/${name}\n \
 cp POWHEG-BOX/HJ/NNLOPS-mass-effects/mergedata.f .\n \
 gfortran -o mergedata mergedata.f\n\n \
-
+\
 cd ${WORKDIR}/${name}/POWHEG-BOX/HJ\n\n \
-
+\
 cp Makefile Makefile.orig\n \
 cat Makefile.orig | sed -e \"s#ANALYSIS=.\+#ANALYSIS=NNLOPS#g\" |sed -e \"s#\$(shell \$(LHAPDF_CONFIG) --libdir)#$(scram tool info lhapdf | grep LIBDIR | cut -d \"=\" -f2)#g\" | sed -e \"s#FASTJET_CONFIG=.\+#FASTJET_CONFIG=$(scram tool info fastjet | grep BASE | cut -d \"=\" -f2)/bin/fastjet-config#g\" | sed -e \"s#NNLOPSREWEIGHTER+=  fastjetfortran.o#NNLOPSREWEIGHTER+=  fastjetfortran.o pwhg_bookhist-multi.o#g\" | sed -e \"s#NNLOPSREWEIGHTERNRW+=  fastjetfortran.o#NNLOPSREWEIGHTERNRW+=  fastjetfortran.o pwhg_bookhist-multi.o#g\" > Makefile\n \
 make nnlopsreweighter-newrwgt || fail_exit \"Failed to compile nnlopsreweighter\"\n \
@@ -244,23 +250,23 @@ gawk \"/sroot/{gsub(/8000/,$COMENERGY)};/hmass/{gsub(/125.5/, ${HMASS})};/mur,mu
 gawk \"/sroot/{gsub(/8000/,$COMENERGY)};/hmass/{gsub(/125.5/, ${HMASS})};/mur,muf/{gsub(/62.750/, $(( $HMASS/4 )))};{print}\" POWHEG-BOX/HJ/PaperRun/HNNLO-LHC8-R04-APX2-11.input | sed -e \"s#10103#SEED#g\" | sed -e \"s#HNNLO-LHC8-R04-APX2-11#HNNLO-LHC13-R04-APX2-0505#g\"> HNNLO-LHC13-R04-APX2-0505.input\n \
 cat << EOF > nnlopsreweighter.input\n \
 # a line beginning with 'lhfile' followed by the name of the event file\n\n \
-
+\
 lhfile pwgevents.lhe\n \
 rwl_format_rwgt\n\n \
-
+\
 # weights present in the lhfile: 'mtinf', 'mt', 'mtmb', 'mtmb-bminlo'\n\n\n \
-
-
+\
+\
 # a line with: 'nnlofiles'\n \
 # followed by a quoted label and the name of a HNNLO output file.\n \
 # In the following the 3 ouput refer to mt=infinity approx,\n \
 # finite mt, and finite mt and mb.\n\n \
-
+\
 nnlofiles\n \
 'nn-mtmb-11' HNNLO-11.top\n \
 'nn-mtmb-22' HNNLO-22.top\n \
 'nn-mtmb-0505' HNNLO-0505.top\n\n \
-
+\
 # The new desired weights, in the Les Houches format.\n \
 # The user can choose to group them in the way he prefers, and give them\n \
 # the id's he likes.\n \
@@ -274,7 +280,7 @@ nnlofiles\n \
 # nnlops-mt id in the following it reweights the nn-mtinf weight present\n \
 # in the .lhe file with the nnlo result present in the\n \
 # HNNLO-LHC8-R04-APX0-11.top file.\n\n \
-
+\
 <initrwgt>\n \
 <weightgroup name='nnl'>\n \
 <weight id='nnlops-11-1'> combines 'nn-mtmb-11' with '1001' </weight>\n \
@@ -307,6 +313,7 @@ nnlofiles\n \
 </weightgroup>\n \
 </initrwgt>\n \
 EOF",
+
     "Zj" : "echo \"Compiling DYNNLO....\"\n \
 wget --no-verbose --no-check-certificate http://theory.fi.infn.it/grazzini/codes/dynnlo-v1.5.tgz\n \
 tar -xzvf dynnlo-v1.5.tgz\n \
@@ -319,19 +326,19 @@ mv pdfset_lhapdf.f.new pdfset_lhapdf.f\n \
 cd -\n \
 cat makefile | sed -e \"s#LHAPDFLIB=.\+#LHAPDFLIB=$(scram tool info lhapdf | grep LIBDIR | cut -d \"=\" -f2)#g\" > makefile\n \
 make || fail_exit \"Failed to compile DYNNLO\"\n\n \
-
+\
 cp -p bin/dynnlo ${WORKDIR}/${name}/\n\n \
-
+\
 cd ${WORKDIR}/${name}/POWHEG-BOX/${process}/DYNNLOPS/aux\n \
 gfortran -mcmodel=medium -o merge3ddata merge3ddata.f  || fail_exit \"Failed to compile merge3ddata\"\n \
 cp merge3ddata ${WORKDIR}/${name}/\n \
 gfortran -mcmodel=medium -o mergedata mergedata.f  || fail_exit \"Failed to compile mergedata\"\n \
 cp mergedata ${WORKDIR}/${name}/\n\n \
-
+\
 cd ${WORKDIR}/${name}/POWHEG-BOX/${process}\n \
 make lhef_analysis_3d || fail_exit \"Failed to compile lhef_analysis_3d\"\n \
 cp lhef_analysis_3d ${WORKDIR}/${name}/\n\n \
-
+\
 cd ${WORKDIR}/${name}\n \
 VMASS=`cat powheg.input | grep \"^Wmass\|^Zmass\" | awk '{print $2}' | cut -d \"d\" -f1`\n \
 VMASSEXP=`cat powheg.input | grep \"^Wmass\|^Zmass\" | awk '{print $2}' | cut -d \"d\" -f2`\n \
@@ -342,7 +349,7 @@ echo $VMASS\n \
 DYNNLOPROC=3\n \
 BEAM=`cat powheg.input | grep \"^ebeam1\" | cut -d \" \" -f2 | tr \"d\" \".\"`;\n \
 COMENERGY=`echo \"( $BEAM*2 )\" | bc`\n\n \
-
+\
 cp POWHEG-BOX/${process}/DYNNLOPS/${process:0:1}NNLOPS/dynnlo-patches/dynnlo.infile dynnlo.infile.orig\n \
 gawk \"/sroot/{gsub(/.*!/,$COMENERGY \\\" !\\\")};\\ \n \
       /nproc/{gsub(/.*!/,$DYNNLOPROC \\\" !\\\")};\\ \n \
@@ -351,6 +358,7 @@ gawk \"/sroot/{gsub(/.*!/,$COMENERGY \\\" !\\\")};\\ \n \
       /rseed/{gsub(/.*!/,\\\"SEED !\\\")};\\ \n \
       /runstring/{gsub(/.*!/,\\\"'SEED' !\\\")};\\ \n \
       {print}\" dynnlo.infile.orig | tee DYNNLO.input",
+
     "Wj" : "echo \"Compiling DYNNLO....\"\n \
 wget --no-verbose --no-check-certificate http://theory.fi.infn.it/grazzini/codes/dynnlo-v1.5.tgz\n \
 tar -xzvf dynnlo-v1.5.tgz\n \
@@ -363,19 +371,19 @@ mv pdfset_lhapdf.f.new pdfset_lhapdf.f\n \
 cd -\n \
 cat makefile | sed -e \"s#LHAPDFLIB=.\+#LHAPDFLIB=$(scram tool info lhapdf | grep LIBDIR | cut -d \"=\" -f2)#g\" > makefile\n \
 make || fail_exit \"Failed to compile DYNNLO\"\n\n \
-
+\
 cp -p bin/dynnlo ${WORKDIR}/${name}/\n\n \
-
+\
 cd ${WORKDIR}/${name}/POWHEG-BOX/${process}/DYNNLOPS/aux\n \
 gfortran -mcmodel=medium -o merge3ddata merge3ddata.f  || fail_exit \"Failed to compile merge3ddata\"\n \
 cp merge3ddata ${WORKDIR}/${name}/\n \
 gfortran -mcmodel=medium -o mergedata mergedata.f  || fail_exit \"Failed to compile mergedata\"\n \
 cp mergedata ${WORKDIR}/${name}/\n\n \
-
+\
 cd ${WORKDIR}/${name}/POWHEG-BOX/${process}\n \
 make lhef_analysis_3d || fail_exit \"Failed to compile lhef_analysis_3d\"\n \
 cp lhef_analysis_3d ${WORKDIR}/${name}/\n\n \
-
+\
 cd ${WORKDIR}/${name}\n \
 VMASS=`cat powheg.input | grep \"^Wmass\|^Zmass\" | awk '{print $2}' | cut -d \"d\" -f1`\n \
 VMASSEXP=`cat powheg.input | grep \"^Wmass\|^Zmass\" | awk '{print $2}' | cut -d \"d\" -f2`\n \
@@ -390,7 +398,7 @@ if [ \"$VID\" = \"-24\" ]; then\n \
 fi\n \
 BEAM=`cat powheg.input | grep \"^ebeam1\" | cut -d \" \" -f2 | tr \"d\" \".\"`;\n \
 COMENERGY=`echo \"( $BEAM*2 )\" | bc`\n\n \
-
+\
 cp POWHEG-BOX/${process}/DYNNLOPS/${process:0:1}NNLOPS/dynnlo-patches/dynnlo.infile dynnlo.infile.orig\n \
 gawk \"/sroot/{gsub(/.*!/,$COMENERGY \\\" !\\\")};\\ \n \
       /nproc/{gsub(/.*!/,$DYNNLOPROC \\\" !\\\")};\\ \n \
