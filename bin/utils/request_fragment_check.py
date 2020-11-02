@@ -8,7 +8,7 @@ import fnmatch
 #import json
 from datetime import datetime
 ###########Needed to check for ultra-legacy sample consistency check############################################
-os.system('cern-get-sso-cookie -u https://cms-pdmv.cern.ch/mcm/ -o cookiefile.txt --krb --reprocess')
+os.system('env -i KRB5CCNAME="$KRB5CCNAME" cern-get-sso-cookie -u https://cms-pdmv.cern.ch/mcm/ -o cookiefile.txt --krb --reprocess')
 ################################################################################################################
 sys.path.append('/afs/cern.ch/cms/PPD/PdmV/tools/McM/')
 from rest import McM
@@ -482,24 +482,36 @@ for num in range(0,len(prepid)):
         data_f2 = re.sub(r'(?m)^ *#.*\n?', '',data_f1)
         # Ultra-legacy sample settings' compatibility
         pi_prime = "NULL"
-        if "Summer19UL16" in pi or "Summer19UL18" in pi:
+        prime_tmp = []
+        if "Summer20UL18" in pi or "Summer20UL17" in pi or "Summer20UL16wmLHEGENAPV" in pi or "Summer20UL16GENAPV" in pi or "Summer20UL16" in pi and "GEN" in pi:
             prime = get_requests_from_datasetname(dn)
             if len(prime) == 0:
-                print "* [ERROR] No corresponing UL17 request to compare to for consistency."
-                print "*         Please first create the corresponding UL17 requests."
+                print "* [ERROR] No corresponing Summer20UL16 request to compare to for consistency."
+                print "*         Please first create the corresponding Summer20UL16 requests."
                 error = error + 1
             if len(prime) != 0:
+		print "Related requests:"
                 for rr in prime:
                     print(rr['prepid'],rr['extension'],ext)
-                    if "UL17" in rr['prepid'] and "GEN" in rr['prepid'] and ext == rr['extension']:
+                    if "Summer20UL16" in rr['prepid'] and "GEN" in rr['prepid'] and ext == rr['extension'] and "APV" not in rr['prepid'] and ("Summer20UL18" in pi or "Summer20UL17" in pi or "Summer20UL16wmLHEGENAPV" in pi or "Summer20UL16GENAPV" in pi):
                         pi_prime = rr['prepid']
                         cmssw_prime = rr['cmssw_release']
-            if "NULL" in pi_prime:
-	       print "* [ERROR] No corresponing UL17 request to compare to for consistency."
-               print "*         Please first create the corresponding UL17 requests."
-	       error = error + 1
-	    else:
-               print"This is an UL16 or UL18 request so GEN settings will be compared to the corresponding UL17 request: "+pi_prime
+                    if "Summer20UL16" in pi and "APV" not in pi and "GEN" in rr['prepid'] and ext == rr['extension'] and "Summer19UL17" in rr['prepid']:
+                        pi_prime = rr['prepid']
+                        cmssw_prime = rr['cmssw_release']
+            if "NULL" in pi_prime and ("APV" in pi or "Summer20UL18" in pi or "Summer20UL17" in pi):
+                print "* [ERROR] No corresponing Summer20UL16 request to compare to for consistency."
+                print "*         Please first create the corresponding Summer20UL16 requests."
+                error = error + 1
+            if "NULL" in pi_prime and "APV" not in pi:
+		print "* [WARNING] No corresponing Summer19UL17 request to compare to for consistency."
+		print "  LEVEL2 Conevers - please chech the request VERY CAREFULLY!"
+		warning = warning + 1
+	    if "NULL" not in pi_prime: #
+               if "APV" in pi or "Summer20UL18" in pi or "Summer20UL17" in pi:
+                  print"This is a Summer20UL16APV, UL17 or UL18 request so GEN settings will be compared to the corresponding Summer20UL16 request: "+pi_prime
+               if "APV" not in pi and "Summer20UL16" in pi:
+                  print"This is a Summer20UL16 requests so GEN setting will be compared to the corresponding Summer19UL17 request: "+pi_prime
                os.popen('wget -q '+mcm_link+'public/restapi/requests/get_fragment/'+pi_prime+' -O '+pi_prime).read()
                f1_prime = open(pi_prime,"r")
                f2_prime = open(pi_prime+"_tmp","w")
@@ -513,14 +525,13 @@ for num in range(0,len(prepid)):
                   error += 1
                if (cmssw == cmssw_prime) == True:
                   print"[OK] Two requests have the same CMSSW version."
-               else:
+               elif "Summer20UL16wmLHEGENAPV" in pi or "Summer20UL16GENAPV" in pi or "Summer20UL18" in pi or "Summer20UL17" in pi:
                   print"[WARNING] CMSSW version of "+pi+" is different than its base UL17 request: "+pi_prime
                   print"        Please make sure that "+pi+" has _exactly_ the same settings as "+pi_prime
                   warning += 1
-                  f1_prime.close()
-                  f2_prime.write(data_f2_prime)
-                  f2_prime.close()
-		  sys.exit()
+               f1_prime.close()
+               f2_prime.write(data_f2_prime)
+               f2_prime.close()
         f1.close()
         f2.write(data_f2)
         f2.close()
@@ -628,10 +639,19 @@ for num in range(0,len(prepid)):
             print "*           is this the hadronizer you intended to use?: "+gettest
             warning += 1
         ttxt = os.popen('grep nThreads '+pi+'_get_test').read()
-        if int(os.popen('grep -c nThreads '+pi+'_get_test').read()) == 0 :
-            nthreads = 1
-        else :
-            nthreads = int(re.search('nThreads(.*?) --',ttxt).group(1))
+        ntread_new = 1
+        if not ttxt:
+            ttxt = os.popen('grep "# Threads for each sequence" '+pi+'_get_test').read()	
+            print(ttxt)
+            nthreads = int(re.search(r'\d+',ttxt).group())
+            if not nthreads:
+                ntread_new = 0
+        if ntread_new == 0:
+            if int(os.popen('grep -c nThreads '+pi+'_get_test').read()) == 0 :
+                nthreads = 1
+            else :
+                nthreads = int(re.search('nThreads(.*?) --',ttxt).group(1))
+
         if  (8*3600/timeperevent)*filter_eff < 50 and timeperevent > 0 and int(test_cs_version[1]) > 9 and ppd == 0:
             print ("* [ERROR] please try to increase the filter efficiency")
             error += 1
@@ -1408,7 +1428,7 @@ for num in range(0,len(prepid)):
         elif 3 in tunecheck:
             print "* [OK] Tune configuration probably OK in the fragment"
             if tunecheck[0] > 2 :
-                if 'Summer19UL' not in pi and 'Fall18' not in pi and 'Fall17' not in pi and 'Run3' not in pi:
+                if 'Summer20UL' not in pi and 'Summer19UL' not in pi and 'Fall18' not in pi and 'Fall17' not in pi and 'Run3' not in pi:
                     print "* [WARNING] Do you really want to have tune "+tune[0] +" in this campaign?"
                     warning += 1
         if 'Fall18' in pi and 'UL' in pi and fsize != 0 and herwig_flag == 0:
