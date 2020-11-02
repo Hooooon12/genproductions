@@ -9,9 +9,9 @@ os.system("mkdir -p " + basedir + basename)
 #masses = [70, 75, 85, 90, 95, 100, 125, 150, 200, 250, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1700, 2000]
 #channels = ["EMu", "EE", "MuMu", "MuE"]
 #masses = [85, 90, 95, 100, 125, 150, 200, 250, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1700, 2000]
-masses = [300]
-#channels = ["SF"]
-channels = ["DF"]
+masses = [70, 75]
+channels = ["SF"]
+#channels = ["DF"]
 
 mixing_SF = {'ven1' : 0.01, 'ven2' : 0., 'vmun1' : 0., 'vmun2' : 0.01}
 mixing_DF = {'ven1' : 0.01, 'ven2' : 0., 'vmun1' : 0.01, 'vmun2' : 0.}
