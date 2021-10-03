@@ -3,9 +3,8 @@ N2MASS_HERE
 N3MASS_HERE
 ZRMASS_HERE
 WRMASS_HERE
-compute_widths zr
-compute_widths wr+
-compute_widths wr-
-compute_widths n1 
+set wzr AUTO
+set wwr AUTO
+set wn1 AUTO
 set param_card wn2 50
 set param_card wn3 50

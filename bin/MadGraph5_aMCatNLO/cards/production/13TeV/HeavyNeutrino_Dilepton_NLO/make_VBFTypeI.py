@@ -8,8 +8,8 @@ os.system("mkdir -p " + basedir + basename)
 
 #masses = [500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1700, 2000]
 #channels = ["EMu", "EE", "MuMu", "MuE"]
-masses = [500]
-channels = ["EMu"]
+masses = [800,1000,1200,1500]
+channels = ["MuMu"]
 
 mixing_EMu = {'ven1' : 1.000000e-02, 'vmun1' : 1.000000e-02}
 mixing_MuE = {'ven1' : 1.000000e-02, 'vmun1' : 1.000000e-02}

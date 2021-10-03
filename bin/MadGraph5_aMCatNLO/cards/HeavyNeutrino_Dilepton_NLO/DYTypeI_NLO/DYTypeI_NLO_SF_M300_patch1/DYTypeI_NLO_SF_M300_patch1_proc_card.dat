@@ -1,0 +1,8 @@
+import model SM_HeavyN_NLO
+define l = l+ l-
+define w = w- w+
+define e = e+ e-
+define mu = mu+ mu-
+generate p p > e n1 [QCD]
+add process p p > mu n2 [QCD]
+output DYTypeI_NLO_SF_M300_patch1 --nojpeg

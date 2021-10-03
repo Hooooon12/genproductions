@@ -1,8 +1,8 @@
 {
 vector <string> s;
 //s.push_back("NLO_XsecEMu_BRmultiplied.txt");
-s.push_back("Sch_NLO_XsecMuMu_BRmultiplied.txt");
-s.push_back("Tch_NLO_XsecEE_BRmultiplied.txt");
+s.push_back("Xsecs/Sch_NLO_XsecMuMu_BRmultiplied.txt");
+s.push_back("Xsecs/Tch_NLO_XsecEE_BRmultiplied.txt");
 
 int i[2] = {0,0};
 int j[2] = {0,0};
@@ -180,7 +180,7 @@ gr4->GetXaxis()->SetTitle("#scale[2.2]{m(N) (GeV)}");
 gr4->GetXaxis()->SetTitleOffset(1.5);
 gr4->GetYaxis()->SetLabelSize(0.05);
 //gr4->GetYaxis()->SetTitle("#scale[2.2]{2016 / reprod.}");
-gr4->GetYaxis()->SetTitle("#scale[2.2]{Tch / Sch}"); 
+gr4->GetYaxis()->SetTitle("#scale[2.2]{Tch / Sch}");
 
 
 }

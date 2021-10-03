@@ -1,0 +1,10 @@
+set param_card mn1 150
+set param_card mn2 1.0e+12
+set param_card mn3 1.0e+12
+set param_card mzr 2200
+set param_card mwr 5000
+set wzr AUTO
+set wwr AUTO
+set wn1 AUTO
+set param_card wn2 50
+set param_card wn3 50

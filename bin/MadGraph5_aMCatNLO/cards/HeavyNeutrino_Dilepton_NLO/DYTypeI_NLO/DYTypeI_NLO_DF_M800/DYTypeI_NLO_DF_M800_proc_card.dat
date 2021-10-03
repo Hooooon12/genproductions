@@ -1,0 +1,7 @@
+import model SM_HeavyN_NLO
+define l = l+ l-
+define w = w- w+
+define e = e+ e-
+define mu = mu+ mu-
+generate p p > l n1 [QCD]
+output DYTypeI_NLO_DF_M800 --nojpeg
