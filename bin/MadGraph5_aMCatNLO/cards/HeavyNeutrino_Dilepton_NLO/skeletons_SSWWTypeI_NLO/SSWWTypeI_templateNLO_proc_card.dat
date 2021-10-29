@@ -1,0 +1,5 @@
+import model SM_HeavyN_NLO
+define p = g u c d s u~ c~ d~ s~
+define j = p
+{process}
+{output}
