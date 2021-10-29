@@ -28,7 +28,7 @@ for File in files:
 for i in range(2):
   logfiles[i].sort(key = lambda f : int(filter(str.isdigit, f)))
   with open("SSWWTypeI_NLO_Xsec_{0}.txt".format(channels[i]),'w') as txt:
-    txt.write("Mass\tXsec(pb) for {0}\n".format(channels[i]))
+    txt.write("Mass\tXsec(pb) for {0} (V==1)\n".format(channels[i]))
     for logfile in logfiles[i]:
         with open(logfile, 'r') as f:
           lines = f.readlines()
