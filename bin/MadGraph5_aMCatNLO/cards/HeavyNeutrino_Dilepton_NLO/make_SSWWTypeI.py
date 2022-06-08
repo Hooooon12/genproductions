@@ -7,10 +7,11 @@ basename_tmp = "skeletons_SSWWTypeI_NLO/SSWWTypeI_NLO"
 os.system("mkdir -p " + basedir + basename)
 
 #masses = [500, 600, 700, 750, 800, 900, 1000, 1100, 1200, 1300, 1500, 1700, 2000, 2500, 3000, 5000, 10000, 15000, 20000]
-masses = [750, 1500, 5000]
-#channels = ["SF","DF"]
+#masses = [1250, 1750, 7500]
+masses = [25000, 30000]
+channels = ["SF","DF"]
 #channels = ["SF_V0p1"]
-channels = ["MupMup","MumMum"]
+#channels = ["MupMup","MumMum"]
 
 mixing_SF = {'ven1' : 1.0, 'ven2' : 0., 'vmun1' : 0., 'vmun2' : 1.0}
 if "SF_V0p1" in channels:

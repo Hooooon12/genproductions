@@ -19,7 +19,7 @@ logfiles = [[],[]]
 channels = ['MuMu','EMu']
 
 for File in files:
-  if '.log' in File and not 'V0p1' in File:
+  if '.log' in File and not 'V0p1' in File and not 'top' in File:
     if 'SF' in File:
       logfiles[0].append(File)
     if 'DF' in File:
