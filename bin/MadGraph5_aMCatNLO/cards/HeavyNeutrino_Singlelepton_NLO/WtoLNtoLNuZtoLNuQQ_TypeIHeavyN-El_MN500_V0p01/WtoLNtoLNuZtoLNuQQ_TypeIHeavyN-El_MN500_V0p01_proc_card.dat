@@ -1,0 +1,8 @@
+import model SM_HeavyN_NLO
+define l = l+ l-
+define w = w- w+
+define e = e+ e-
+define mu = mu+ mu-
+define v = vl vl~
+generate p p > e n1 [QCD]
+output WtoLNtoLNuZtoLNuQQ_TypeIHeavyN-El_MN500_V0p01 --nojpeg
