@@ -8,7 +8,8 @@ os.system("mkdir -p " + basedir + basename)
 
 #masses = [500, 600, 700, 750, 800, 900, 1000, 1100, 1200, 1300, 1500, 1700, 2000, 2500, 3000, 5000, 10000, 15000, 20000]
 #masses = [1250, 1750, 7500]
-masses = [25000, 30000]
+#masses = [25000, 30000]
+masses = [40000, 50000, 60000, 70000, 80000, 90000, 100000]
 channels = ["SF","DF"]
 #channels = ["SF_V0p1"]
 #channels = ["MupMup","MumMum"]
