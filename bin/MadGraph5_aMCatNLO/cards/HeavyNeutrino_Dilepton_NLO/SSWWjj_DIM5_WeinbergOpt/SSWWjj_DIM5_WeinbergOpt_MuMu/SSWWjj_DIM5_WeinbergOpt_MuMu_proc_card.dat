@@ -1,0 +1,4 @@
+import model SMWeinbergNLO
+generate p p > mu+ mu+ j j QED=4 QCD=0 $$ w+ w- [QCD]
+add process p p > mu- mu- j j QED=4 QCD=0 $$ w+ w- [QCD]
+output SSWWjj_DIM5_WeinbergOpt_MuMu -nojpeg 
