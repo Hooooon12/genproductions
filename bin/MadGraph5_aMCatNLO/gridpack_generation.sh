@@ -215,13 +215,13 @@ make_gridpack () {
     #         echo "set cluster_queue $queue" >> mgconfigscript
           fi 
           if [ $iscmsconnect -gt 0 ]; then
-    	  n_retries=10
-    	  long_wait=300
-    	  short_wait=120
+            n_retries=10
+            long_wait=300
+            short_wait=120
           else
-    	  n_retries=3
-    	  long_wait=60
-    	  short_wait=30
+            n_retries=3
+            long_wait=60
+            short_wait=30
           fi
           echo "set cluster_status_update $long_wait $short_wait" >> mgconfigscript
           echo "set cluster_nb_retry $n_retries" >> mgconfigscript
@@ -236,6 +236,10 @@ make_gridpack () {
           fi      
       fi
     
+      ##### JH: install necessary packages so that MG cannot raise the prompt for package install... see 251106 work log
+      echo "install ninja"            >> mgconfigscript
+      echo "install collier"          >> mgconfigscript
+      #####
       echo "save options" >> mgconfigscript
     
       ./bin/mg5_aMC mgconfigscript
@@ -249,7 +253,7 @@ make_gridpack () {
           #get needed BSM model
           if [[ $model = *[!\ ]* ]]; then
             echo "Loading extra model $model"
-            wget --no-check-certificate https://cms-project-generators.web.cern.ch/cms-project-generators/$model	
+            wget --no-check-certificate https://cms-project-generators.web.cern.ch/cms-project-generators/$model      
             cd models
             if [[ $model == *".zip"* ]]; then
               unzip ../$model
@@ -296,16 +300,16 @@ make_gridpack () {
           if [ "${runMadSTR}" -lt 1 ] || [ "${runMadSTR}" -gt 6 ] ; then
               echo "istr should be between 1 and 6" # wrong settings 
               exit 1
-	  fi
+        fi
       fi
       if [  "$runMadSTR" == 0 ]; then 
-	  ./$MGBASEDIRORIG/bin/mg5_aMC ${name}_proc_card.dat # normal run without plugin 
+        ./$MGBASEDIRORIG/bin/mg5_aMC ${name}_proc_card.dat # normal run without plugin 
       else
-	  echo "Invoke MadSTR plugin when starting MG5_aMC@NLO" 
-	  cp -r $PRODHOME/PLUGIN/MadSTR $MGBASEDIRORIG/PLUGIN/ # copy plugin 
+        echo "Invoke MadSTR plugin when starting MG5_aMC@NLO" 
+        cp -r $PRODHOME/PLUGIN/MadSTR $MGBASEDIRORIG/PLUGIN/ # copy plugin 
           ./$MGBASEDIRORIG/bin/mg5_aMC --mode=MadSTR ${name}_proc_card.dat # run invoking MadSTR plugin
       fi
-	
+      
       is5FlavorScheme=0
       if tail -n 20 $LOGFILE | grep -q -e "^p *=.*b\~.*b" -e "^p *=.*b.*b\~"; then 
         is5FlavorScheme=1
@@ -495,7 +499,7 @@ make_gridpack () {
       if [ -e $CARDSDIR/${name}_reweight_card.dat ]; then
           echo "preparing reweighting step"
           prepare_reweight $isnlo $WORKDIR $scram_arch $CARDSDIR/${name}_reweight_card.dat
-	  extract_width $isnlo $WORKDIR $CARDSDIR ${name}
+        extract_width $isnlo $WORKDIR $CARDSDIR ${name}
       fi
       
       echo "finished pilot run"
@@ -573,7 +577,7 @@ make_gridpack () {
       if [ -e $CARDSDIR/${name}_reweight_card.dat ]; then
           echo "preparing reweighting step"
           prepare_reweight $isnlo $WORKDIR $scram_arch $CARDSDIR/${name}_reweight_card.dat
-	  extract_width $isnlo $WORKDIR $CARDSDIR ${name}
+        extract_width $isnlo $WORKDIR $CARDSDIR ${name}
       fi
       
       #prepare madspin grids if necessary
