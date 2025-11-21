@@ -20,9 +20,9 @@ channels = ["DF"]
 #channels = ["EE"]
 #channels = ["MuMu"]
 #channels = ["MupMup","MumMum"]
-processes = ["DY"]
+#processes = ["DY"]
 #processes = ["SSWW"]
-#processes = ["VBF"] # Beware that VBF should use differnet pdfsets in /data2/Users/jihkim/genproductions/MetaData/pdflist_5f_2017.dat
+processes = ["VBF"] # Beware that VBF should use differnet pdfsets in /data2/Users/jihkim/genproductions/MetaData/pdflist_5f_2017.dat
 
 for process in processes:
   for channel in channels:
