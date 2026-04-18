@@ -1,0 +1,7 @@
+set nuphysics 1 200000
+set nuphysics 2 {cee}
+set nuphysics 3 {cem}
+set nuphysics 4 {cet}
+set nuphysics 5 {cmm}
+set nuphysics 6 {cmt}
+set nuphysics 7 {ctt}
