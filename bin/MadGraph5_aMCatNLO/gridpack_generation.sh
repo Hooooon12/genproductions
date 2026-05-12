@@ -239,6 +239,7 @@ make_gridpack () {
       ##### JH: install necessary packages so that MG cannot raise the prompt for package install... see 251106 work log
 #echo "install ninja"            >> mgconfigscript
 #echo "install collier"          >> mgconfigscript
+      ##### JH: OK, another error again... see 260419 work log
       touch "$PWD/unused_cudacpp.tar.gz"
       echo "install ninja --mg5_path=$PWD --cudacpp_tarball=$PWD/unused_cudacpp.tar.gz"   >> mgconfigscript
       echo "install collier --mg5_path=$PWD --cudacpp_tarball=$PWD/unused_cudacpp.tar.gz" >> mgconfigscript # fix gridpack error @260419
